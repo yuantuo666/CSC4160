@@ -1,0 +1,80 @@
+===============================================================================
+=== [client] N. Virginia-c5.large (35.153.133.153) --> [server] N. Virginia-c5.large (172.31.40.132) ===
+===============================================================================
+PING 54.224.252.25 (54.224.252.25) 56(84) bytes of data.
+64 bytes from 54.224.252.25: icmp_seq=1 ttl=63 time=0.314 ms
+64 bytes from 54.224.252.25: icmp_seq=2 ttl=63 time=0.293 ms
+64 bytes from 54.224.252.25: icmp_seq=3 ttl=63 time=0.296 ms
+64 bytes from 54.224.252.25: icmp_seq=4 ttl=63 time=0.295 ms
+64 bytes from 54.224.252.25: icmp_seq=5 ttl=63 time=0.297 ms
+
+--- 54.224.252.25 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4089ms
+rtt min/avg/max/mdev = 0.293/0.299/0.314/0.007 ms
+------------------------------------------------------------
+Client connecting to 54.224.252.25, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.41.76 port 58506 connected with 54.224.252.25 port 80 (icwnd/mss/irtt=14/1448/251)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0142 sec  2.94 GBytes  2.52 Gbits/sec
+===============================================================================
+=== [client] Oregon-c5.large (35.93.32.3) --> [server] N. Virginia-c5.large (172.31.40.132) ===
+===============================================================================
+PING 54.224.252.25 (54.224.252.25) 56(84) bytes of data.
+64 bytes from 54.224.252.25: icmp_seq=1 ttl=58 time=62.0 ms
+64 bytes from 54.224.252.25: icmp_seq=2 ttl=58 time=62.0 ms
+64 bytes from 54.224.252.25: icmp_seq=3 ttl=58 time=62.0 ms
+64 bytes from 54.224.252.25: icmp_seq=4 ttl=58 time=62.1 ms
+64 bytes from 54.224.252.25: icmp_seq=5 ttl=58 time=62.0 ms
+
+--- 54.224.252.25 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4004ms
+rtt min/avg/max/mdev = 61.995/62.024/62.095/0.036 ms
+------------------------------------------------------------
+Client connecting to 54.224.252.25, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.29.201 port 49378 connected with 54.224.252.25 port 80 (icwnd/mss/irtt=14/1448/63834)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.2946 sec  14.9 MBytes  12.1 Mbits/sec
+===============================================================================
+=== [client] N. Virginia-c5.large (35.153.133.153) --> [server] Oregon-c5.large (172.31.17.208) ===
+===============================================================================
+PING 54.188.55.65 (54.188.55.65) 56(84) bytes of data.
+64 bytes from 54.188.55.65: icmp_seq=1 ttl=58 time=64.5 ms
+64 bytes from 54.188.55.65: icmp_seq=2 ttl=58 time=64.5 ms
+64 bytes from 54.188.55.65: icmp_seq=3 ttl=58 time=64.5 ms
+64 bytes from 54.188.55.65: icmp_seq=4 ttl=58 time=64.5 ms
+64 bytes from 54.188.55.65: icmp_seq=5 ttl=58 time=64.5 ms
+
+--- 54.188.55.65 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 64.455/64.479/64.545/0.033 ms
+------------------------------------------------------------
+Client connecting to 54.188.55.65, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.41.76 port 34200 connected with 54.188.55.65 port 80 (icwnd/mss/irtt=14/1448/64615)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.3440 sec  14.8 MBytes  12.0 Mbits/sec
+===============================================================================
+=== [client] Oregon-c5.large (35.93.32.3) --> [server] Oregon-c5.large (172.31.17.208) ===
+===============================================================================
+PING 54.188.55.65 (54.188.55.65) 56(84) bytes of data.
+64 bytes from 54.188.55.65: icmp_seq=1 ttl=63 time=0.232 ms
+64 bytes from 54.188.55.65: icmp_seq=2 ttl=63 time=0.183 ms
+64 bytes from 54.188.55.65: icmp_seq=3 ttl=63 time=0.179 ms
+64 bytes from 54.188.55.65: icmp_seq=4 ttl=63 time=0.182 ms
+64 bytes from 54.188.55.65: icmp_seq=5 ttl=63 time=0.190 ms
+
+--- 54.188.55.65 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4113ms
+rtt min/avg/max/mdev = 0.179/0.193/0.232/0.019 ms
+------------------------------------------------------------
+Client connecting to 54.188.55.65, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.29.201 port 44058 connected with 54.188.55.65 port 80 (icwnd/mss/irtt=14/1448/204)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0072 sec  2.76 GBytes  2.37 Gbits/sec

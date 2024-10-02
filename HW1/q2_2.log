@@ -1,0 +1,66 @@
+===============================================================================
+=== [client] N. Virginia-c5.large (35.153.133.153) --> [server] N. Virginia-c5.large (172.31.40.132) ===
+===============================================================================
+PING 172.31.40.132 (172.31.40.132) 56(84) bytes of data.
+64 bytes from 172.31.40.132: icmp_seq=1 ttl=64 time=0.210 ms
+64 bytes from 172.31.40.132: icmp_seq=2 ttl=64 time=0.193 ms
+64 bytes from 172.31.40.132: icmp_seq=3 ttl=64 time=0.204 ms
+64 bytes from 172.31.40.132: icmp_seq=4 ttl=64 time=0.190 ms
+64 bytes from 172.31.40.132: icmp_seq=5 ttl=64 time=0.189 ms
+
+--- 172.31.40.132 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4112ms
+rtt min/avg/max/mdev = 0.189/0.197/0.210/0.008 ms
+------------------------------------------------------------
+Client connecting to 172.31.40.132, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.41.76 port 39064 connected with 172.31.40.132 port 80 (icwnd/mss/irtt=87/8949/174)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0127 sec  4.73 GBytes  4.06 Gbits/sec
+===============================================================================
+=== [client] Oregon-c5.large (35.93.32.3) --> [server] N. Virginia-c5.large (172.31.40.132) ===
+===============================================================================
+PING 172.31.40.132 (172.31.40.132) 56(84) bytes of data.
+
+--- 172.31.40.132 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4115ms
+
+------------------------------------------------------------
+Client connecting to 172.31.40.132, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 0.0.0.0 port 0 connected with 172.31.40.132 port 80
+===============================================================================
+=== [client] N. Virginia-c5.large (35.153.133.153) --> [server] Oregon-c5.large (172.31.17.208) ===
+===============================================================================
+PING 172.31.17.208 (172.31.17.208) 56(84) bytes of data.
+
+--- 172.31.17.208 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4083ms
+
+------------------------------------------------------------
+Client connecting to 172.31.17.208, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 0.0.0.0 port 0 connected with 172.31.17.208 port 80
+===============================================================================
+=== [client] Oregon-c5.large (35.93.32.3) --> [server] Oregon-c5.large (172.31.17.208) ===
+===============================================================================
+PING 172.31.17.208 (172.31.17.208) 56(84) bytes of data.
+64 bytes from 172.31.17.208: icmp_seq=1 ttl=64 time=0.552 ms
+64 bytes from 172.31.17.208: icmp_seq=2 ttl=64 time=0.150 ms
+64 bytes from 172.31.17.208: icmp_seq=3 ttl=64 time=0.187 ms
+64 bytes from 172.31.17.208: icmp_seq=4 ttl=64 time=0.150 ms
+64 bytes from 172.31.17.208: icmp_seq=5 ttl=64 time=0.157 ms
+
+--- 172.31.17.208 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4097ms
+rtt min/avg/max/mdev = 0.150/0.239/0.552/0.156 ms
+------------------------------------------------------------
+Client connecting to 172.31.17.208, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.29.201 port 43256 connected with 172.31.17.208 port 80 (icwnd/mss/irtt=87/8949/189)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0034 sec  3.80 GBytes  3.26 Gbits/sec

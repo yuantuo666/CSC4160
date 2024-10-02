@@ -1,0 +1,120 @@
+===============================================================================
+=== [client] t3.medium (34.234.69.10) --> [server] t3.medium (172.31.17.181) ===
+===============================================================================
+PING 172.31.17.181 (172.31.17.181) 56(84) bytes of data.
+64 bytes from 172.31.17.181: icmp_seq=1 ttl=64 time=0.235 ms
+64 bytes from 172.31.17.181: icmp_seq=2 ttl=64 time=0.309 ms
+64 bytes from 172.31.17.181: icmp_seq=3 ttl=64 time=0.252 ms
+64 bytes from 172.31.17.181: icmp_seq=4 ttl=64 time=0.208 ms
+64 bytes from 172.31.17.181: icmp_seq=5 ttl=64 time=0.236 ms
+
+--- 172.31.17.181 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4077ms
+rtt min/avg/max/mdev = 0.208/0.248/0.309/0.033 ms
+------------------------------------------------------------
+Client connecting to 172.31.17.181, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.31.87 port 45968 connected with 172.31.17.181 port 80 (icwnd/mss/irtt=87/8949/334)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0065 sec  2.65 GBytes  2.28 Gbits/sec
+===============================================================================
+=== [client] m5.large (34.202.231.79) --> [server] m5.large (172.31.22.208) ===
+===============================================================================
+PING 172.31.22.208 (172.31.22.208) 56(84) bytes of data.
+64 bytes from 172.31.22.208: icmp_seq=1 ttl=64 time=0.325 ms
+64 bytes from 172.31.22.208: icmp_seq=2 ttl=64 time=0.129 ms
+64 bytes from 172.31.22.208: icmp_seq=3 ttl=64 time=0.128 ms
+64 bytes from 172.31.22.208: icmp_seq=4 ttl=64 time=0.131 ms
+64 bytes from 172.31.22.208: icmp_seq=5 ttl=64 time=0.134 ms
+
+--- 172.31.22.208 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4085ms
+rtt min/avg/max/mdev = 0.128/0.169/0.325/0.077 ms
+------------------------------------------------------------
+Client connecting to 172.31.22.208, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.23.154 port 47582 connected with 172.31.22.208 port 80 (icwnd/mss/irtt=87/8949/171)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0033 sec  5.37 GBytes  4.61 Gbits/sec
+===============================================================================
+=== [client] c5n.large (98.81.51.117) --> [server] c5n.large (172.31.10.187) ===
+===============================================================================
+PING 172.31.10.187 (172.31.10.187) 56(84) bytes of data.
+64 bytes from 172.31.10.187: icmp_seq=1 ttl=64 time=0.122 ms
+64 bytes from 172.31.10.187: icmp_seq=2 ttl=64 time=0.130 ms
+64 bytes from 172.31.10.187: icmp_seq=3 ttl=64 time=0.125 ms
+64 bytes from 172.31.10.187: icmp_seq=4 ttl=64 time=0.111 ms
+64 bytes from 172.31.10.187: icmp_seq=5 ttl=64 time=0.118 ms
+
+--- 172.31.10.187 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4093ms
+rtt min/avg/max/mdev = 0.111/0.121/0.130/0.006 ms
+------------------------------------------------------------
+Client connecting to 172.31.10.187, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.12.133 port 58734 connected with 172.31.10.187 port 80 (icwnd/mss/irtt=87/8949/188)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0081 sec  4.90 GBytes  4.21 Gbits/sec
+===============================================================================
+=== [client] c5n.large (98.81.51.117) --> [server] t3.medium (172.31.17.181) ===
+===============================================================================
+PING 172.31.17.181 (172.31.17.181) 56(84) bytes of data.
+64 bytes from 172.31.17.181: icmp_seq=1 ttl=64 time=0.553 ms
+64 bytes from 172.31.17.181: icmp_seq=2 ttl=64 time=0.565 ms
+64 bytes from 172.31.17.181: icmp_seq=3 ttl=64 time=0.543 ms
+64 bytes from 172.31.17.181: icmp_seq=4 ttl=64 time=0.553 ms
+64 bytes from 172.31.17.181: icmp_seq=5 ttl=64 time=0.547 ms
+
+--- 172.31.17.181 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4123ms
+rtt min/avg/max/mdev = 0.543/0.552/0.565/0.007 ms
+------------------------------------------------------------
+Client connecting to 172.31.17.181, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.12.133 port 56066 connected with 172.31.17.181 port 80 (icwnd/mss/irtt=87/8949/521)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0118 sec  1.42 GBytes  1.22 Gbits/sec
+===============================================================================
+=== [client] c5n.large (98.81.51.117) --> [server] m5.large (172.31.22.208) ===
+===============================================================================
+PING 172.31.22.208 (172.31.22.208) 56(84) bytes of data.
+64 bytes from 172.31.22.208: icmp_seq=1 ttl=64 time=0.542 ms
+64 bytes from 172.31.22.208: icmp_seq=2 ttl=64 time=0.530 ms
+64 bytes from 172.31.22.208: icmp_seq=3 ttl=64 time=0.531 ms
+64 bytes from 172.31.22.208: icmp_seq=4 ttl=64 time=0.525 ms
+64 bytes from 172.31.22.208: icmp_seq=5 ttl=64 time=0.536 ms
+
+--- 172.31.22.208 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4112ms
+rtt min/avg/max/mdev = 0.525/0.532/0.542/0.005 ms
+------------------------------------------------------------
+Client connecting to 172.31.22.208, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.12.133 port 44714 connected with 172.31.22.208 port 80 (icwnd/mss/irtt=87/8949/573)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0119 sec  1.41 GBytes  1.21 Gbits/sec
+===============================================================================
+=== [client] t3.medium (34.234.69.10) --> [server] m5.large (172.31.22.208) ===
+===============================================================================
+PING 172.31.22.208 (172.31.22.208) 56(84) bytes of data.
+64 bytes from 172.31.22.208: icmp_seq=1 ttl=64 time=0.157 ms
+64 bytes from 172.31.22.208: icmp_seq=2 ttl=64 time=0.179 ms
+64 bytes from 172.31.22.208: icmp_seq=3 ttl=64 time=0.145 ms
+64 bytes from 172.31.22.208: icmp_seq=4 ttl=64 time=0.191 ms
+64 bytes from 172.31.22.208: icmp_seq=5 ttl=64 time=0.140 ms
+
+--- 172.31.22.208 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4134ms
+rtt min/avg/max/mdev = 0.140/0.162/0.191/0.019 ms
+------------------------------------------------------------
+Client connecting to 172.31.22.208, TCP port 80
+TCP window size:  416 KByte (WARNING: requested  256 KByte)
+------------------------------------------------------------
+[  1] local 172.31.31.87 port 34918 connected with 172.31.22.208 port 80 (icwnd/mss/irtt=87/8949/176)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0038 sec  4.26 GBytes  3.66 Gbits/sec
