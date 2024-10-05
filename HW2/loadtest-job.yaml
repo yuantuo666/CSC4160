@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: loadtest
+spec:
+  template:
+    spec:
+      containers:
+      - name: siege
+        image: schoolofdevops/loadtest:v1
+        command: ["siege",  "--concurrent=15", "--benchmark", "--time=4m", "http://192.168.49.2:31844"] # FILL IN: rng or hasher
+      restartPolicy: Never
+  backoffLimit: 4
