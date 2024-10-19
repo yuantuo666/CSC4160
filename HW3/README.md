@@ -262,7 +262,7 @@ You will receive 1 point for including the required figures in your `.ipynb`: a 
 
    What is the role of ECR in this deployment? How does it integrate with Lambda for managing containerized applications?
 
-   **Answer**: ECR stands for Elastic Container Registry, which manages the Docker images for the Lambda function. Once the Docker image is built, it can be pushed to the ECR, with a tag. By integrating with Lambda, you can upload the image of Lambda function to ECR, and when a Lambda function is called, the Lambda will pull the Docker image from ECR and run the containerized application. This allows the Lambda function to be more flexible and scalable, as the Docker image can be easily updated and managed.
+   **Answer**: ECR stands for Elastic Container Registry, which manages the Docker images for the Lambda function. Once the Docker image is built, it can be pushed to the ECR, with a tag for version controlling. By integrating with Lambda, we can upload the image of Lambda function to ECR, and when a Lambda function is called, the Lambda will pull the Docker image from ECR and run the containerized application. This allows the Lambda function to be more flexible and scalable, as the Docker image can be easily updated and managed. This also make the deployment process easier, there is no need to configure the environment many times.
 
 ### Analysis of Cold Start Phenomenon
 
@@ -284,7 +284,7 @@ You will receive 1 point for including the required figures in your `.ipynb`: a 
 
    Discuss the implications of cold starts on serverless applications and how they affect performance. What strategies can be employed to mitigate these effects?
 
-   **Answer**: Cold start can introduce large latency when starting the containers, this will make the part of the requests waiting more than expected time, and affecting the overall applications performance. This can be mitigated by setting a function to regulary calling these function to keep it warm and keep a number of instances running even if there is no requests. If we can predict the coming large users, we can also pre-running the function to make sure its in warm start.
+   **Answer**: Cold start can introduce large latency when starting the containers, this will make the part of the requests waiting more than expected time, and affecting the overall applications performance. This can be mitigated by setting a function to regulary calling these function to keep it warm and keep a number of instances running even if there is no requests (by configurating the "Provisioned Concurrency"). If we can predict the coming large users, we can also pre-running the function to make sure its in warm start.
 
 ## Submission Requirements
 
