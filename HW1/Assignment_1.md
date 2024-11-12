@@ -36,6 +36,8 @@
 
     > Region: US East (N. Virginia)
 
+    Among these instances, the CPU and memory performance of them are ranked as `c5d.large` > `m5.large` > `t3.medium`. The `c5d.large` instance has the best performance, which is expected because it is "Compute Optimized". For `m5.large`, it is "General Purpose". For `t3.medium`, it is "Burstable General-purpose". The performance of these instances is consistent with their instance types, as described [here](https://aws.amazon.com/ec2/instance-types/).
+
     Full log can be found in file `q1.log`.
 
 ## Question 2: Measure the EC2 Network performance
@@ -81,3 +83,8 @@
 ## References
 
 - [SysBench](https://github.com/akopytov/sysbench?tab=readme-ov-file#general-command-line-options)
+
+## Score
+
+- Score: 3.5/4
+- Remarks: -0.5 in Q1.2. Missing explanations for the differences.

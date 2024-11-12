@@ -446,3 +446,8 @@ In this assignment, you are required to finish the following things:
   - Terminal
 - Open question (1 mark):
   - A better metric?
+
+
+## Score
+
+- Score: 7/7

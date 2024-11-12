@@ -1,0 +1,1104 @@
+24/11/08 07:51:02 INFO SparkContext: Running Spark version 3.3.1
+24/11/08 07:51:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/11/08 07:51:02 INFO ResourceUtils: ==============================================================
+24/11/08 07:51:02 INFO ResourceUtils: No custom resources configured for spark.driver.
+24/11/08 07:51:02 INFO ResourceUtils: ==============================================================
+24/11/08 07:51:02 INFO SparkContext: Submitted application: PageRankRDD
+24/11/08 07:51:02 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 2, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+24/11/08 07:51:02 INFO ResourceProfile: Limiting resource is cpus at 2 tasks per executor
+24/11/08 07:51:02 INFO ResourceProfileManager: Added ResourceProfile id: 0
+24/11/08 07:51:02 INFO SecurityManager: Changing view acls to: ubuntu
+24/11/08 07:51:02 INFO SecurityManager: Changing modify acls to: ubuntu
+24/11/08 07:51:02 INFO SecurityManager: Changing view acls groups to: 
+24/11/08 07:51:02 INFO SecurityManager: Changing modify acls groups to: 
+24/11/08 07:51:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ubuntu); groups with view permissions: Set(); users  with modify permissions: Set(ubuntu); groups with modify permissions: Set()
+24/11/08 07:51:02 INFO Utils: Successfully started service 'sparkDriver' on port 41037.
+24/11/08 07:51:02 INFO SparkEnv: Registering MapOutputTracker
+24/11/08 07:51:03 INFO SparkEnv: Registering BlockManagerMaster
+24/11/08 07:51:03 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+24/11/08 07:51:03 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+24/11/08 07:51:03 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+24/11/08 07:51:03 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e9cd1c51-e0b5-44d8-ac3e-61ab6d6235f0
+24/11/08 07:51:03 INFO MemoryStore: MemoryStore started with capacity 2004.6 MiB
+24/11/08 07:51:03 INFO SparkEnv: Registering OutputCommitCoordinator
+24/11/08 07:51:03 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+24/11/08 07:51:03 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://172.31.15.133:7077...
+24/11/08 07:51:04 INFO TransportClientFactory: Successfully created connection to /172.31.15.133:7077 after 38 ms (0 ms spent in bootstraps)
+24/11/08 07:51:04 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20241108075104-0003
+24/11/08 07:51:04 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20241108075104-0003/0 on worker-20241108060834-172.31.15.133-43739 (172.31.15.133:43739) with 2 core(s)
+24/11/08 07:51:04 INFO StandaloneSchedulerBackend: Granted executor ID app-20241108075104-0003/0 on hostPort 172.31.15.133:43739 with 2 core(s), 4.0 GiB RAM
+24/11/08 07:51:04 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20241108075104-0003/1 on worker-20241108060833-172.31.9.98-37171 (172.31.9.98:37171) with 2 core(s)
+24/11/08 07:51:04 INFO StandaloneSchedulerBackend: Granted executor ID app-20241108075104-0003/1 on hostPort 172.31.9.98:37171 with 2 core(s), 4.0 GiB RAM
+24/11/08 07:51:04 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33617.
+24/11/08 07:51:04 INFO NettyBlockTransferService: Server created on ip-172-31-15-133.ec2.internal:33617
+24/11/08 07:51:04 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/11/08 07:51:04 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20241108075104-0003/1 is now RUNNING
+24/11/08 07:51:04 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ip-172-31-15-133.ec2.internal, 33617, None)
+24/11/08 07:51:04 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20241108075104-0003/0 is now RUNNING
+24/11/08 07:51:04 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-15-133.ec2.internal:33617 with 2004.6 MiB RAM, BlockManagerId(driver, ip-172-31-15-133.ec2.internal, 33617, None)
+24/11/08 07:51:04 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ip-172-31-15-133.ec2.internal, 33617, None)
+24/11/08 07:51:04 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ip-172-31-15-133.ec2.internal, 33617, None)
+24/11/08 07:51:04 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+24/11/08 07:51:06 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 358.0 KiB, free 2004.3 MiB)
+24/11/08 07:51:06 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 32.3 KiB, free 2004.2 MiB)
+24/11/08 07:51:06 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 32.3 KiB, free: 2004.6 MiB)
+24/11/08 07:51:06 INFO SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:0
+24/11/08 07:51:08 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.9.98:36700) with ID 1,  ResourceProfileId 0
+24/11/08 07:51:08 INFO FileInputFormat: Total input files to process : 1
+24/11/08 07:51:08 INFO BlockManagerMasterEndpoint: Registering block manager 172.31.9.98:33869 with 2004.6 MiB RAM, BlockManagerId(1, 172.31.9.98, 33869, None)
+24/11/08 07:51:08 INFO NetworkTopology: Adding a new node: /default-rack/172.31.15.133:9866
+24/11/08 07:51:08 INFO NetworkTopology: Adding a new node: /default-rack/172.31.9.98:9866
+24/11/08 07:51:10 INFO deprecation: mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+24/11/08 07:51:10 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+24/11/08 07:51:10 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+24/11/08 07:51:10 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+24/11/08 07:51:10 INFO SparkContext: Starting job: runJob at SparkHadoopWriter.scala:83
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 3 (groupByKey at /home/ubuntu/page_rank_rdd_v2.py:17) as input to shuffle 20
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 11 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 19
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 15 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 18
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 22 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 17
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 26 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 16
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 33 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 15
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 37 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 14
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 44 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 13
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 48 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 12
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 55 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 11
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 59 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 10
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 66 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 9
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 70 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 8
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 77 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 7
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 81 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 6
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 88 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 5
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 92 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 4
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 99 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 3
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 103 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 2
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 110 (join at /home/ubuntu/page_rank_rdd_v2.py:24) as input to shuffle 1
+24/11/08 07:51:10 INFO DAGScheduler: Registering RDD 114 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) as input to shuffle 0
+24/11/08 07:51:10 INFO DAGScheduler: Got job 0 (runJob at SparkHadoopWriter.scala:83) with 22 output partitions
+24/11/08 07:51:10 INFO DAGScheduler: Final stage: ResultStage 21 (runJob at SparkHadoopWriter.scala:83)
+24/11/08 07:51:10 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 20)
+24/11/08 07:51:10 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 20)
+24/11/08 07:51:10 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[3] at groupByKey at /home/ubuntu/page_rank_rdd_v2.py:17), which has no missing parents
+24/11/08 07:51:11 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.2 KiB, free 2004.2 MiB)
+24/11/08 07:51:11 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 7.8 KiB, free 2004.2 MiB)
+24/11/08 07:51:11 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 7.8 KiB, free: 2004.6 MiB)
+24/11/08 07:51:11 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:51:11 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.31.15.133:46032) with ID 0,  ResourceProfileId 0
+24/11/08 07:51:11 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (PairwiseRDD[3] at groupByKey at /home/ubuntu/page_rank_rdd_v2.py:17) (first 15 tasks are for partitions Vector(0, 1))
+24/11/08 07:51:11 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks resource profile 0
+24/11/08 07:51:11 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 0) (172.31.9.98, executor 1, partition 1, NODE_LOCAL, 4504 bytes) taskResourceAssignments Map()
+24/11/08 07:51:11 INFO BlockManagerMasterEndpoint: Registering block manager 172.31.15.133:35213 with 2004.6 MiB RAM, BlockManagerId(0, 172.31.15.133, 35213, None)
+24/11/08 07:51:11 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.31.9.98:33869 (size: 7.8 KiB, free: 2004.6 MiB)
+24/11/08 07:51:12 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.31.9.98:33869 (size: 32.3 KiB, free: 2004.6 MiB)
+24/11/08 07:51:14 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 1) (172.31.9.98, executor 1, partition 0, ANY, 4504 bytes) taskResourceAssignments Map()
+24/11/08 07:51:36 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 0) in 25123 ms on 172.31.9.98 (executor 1) (1/2)
+24/11/08 07:51:36 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 44415
+24/11/08 07:51:38 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 1) in 23190 ms on 172.31.9.98 (executor 1) (2/2)
+24/11/08 07:51:38 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+24/11/08 07:51:38 INFO DAGScheduler: ShuffleMapStage 0 (groupByKey at /home/ubuntu/page_rank_rdd_v2.py:17) finished in 27.147 s
+24/11/08 07:51:38 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:51:38 INFO DAGScheduler: running: Set()
+24/11/08 07:51:38 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 1, ShuffleMapStage 16, ShuffleMapStage 2, ShuffleMapStage 17, ShuffleMapStage 3, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 4, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 5, ShuffleMapStage 20, ShuffleMapStage 6, ResultStage 21, ShuffleMapStage 7, ShuffleMapStage 14, ShuffleMapStage 8)
+24/11/08 07:51:38 INFO DAGScheduler: failed: Set()
+24/11/08 07:51:38 INFO DAGScheduler: Submitting ShuffleMapStage 1 (PairwiseRDD[11] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:51:38 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 18.7 KiB, free 2004.2 MiB)
+24/11/08 07:51:38 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 8.4 KiB, free 2004.2 MiB)
+24/11/08 07:51:38 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.4 KiB, free: 2004.6 MiB)
+24/11/08 07:51:38 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:51:38 INFO DAGScheduler: Submitting 4 missing tasks from ShuffleMapStage 1 (PairwiseRDD[11] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+24/11/08 07:51:38 INFO TaskSchedulerImpl: Adding task set 1.0 with 4 tasks resource profile 0
+24/11/08 07:51:38 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2) (172.31.9.98, executor 1, partition 0, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:51:38 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3) (172.31.9.98, executor 1, partition 1, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:51:38 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.31.9.98:33869 (size: 8.4 KiB, free: 2004.6 MiB)
+24/11/08 07:51:38 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 20 to 172.31.9.98:36700
+24/11/08 07:51:41 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 4) (172.31.15.133, executor 0, partition 2, ANY, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:51:41 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 5) (172.31.15.133, executor 0, partition 3, ANY, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:51:42 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.31.15.133:35213 (size: 8.4 KiB, free: 2004.6 MiB)
+24/11/08 07:51:43 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 20 to 172.31.15.133:46032
+24/11/08 07:51:45 INFO BlockManagerInfo: Added rdd_6_1 in memory on 172.31.9.98:33869 (size: 7.8 MiB, free: 1996.7 MiB)
+24/11/08 07:51:45 INFO BlockManagerInfo: Added rdd_6_0 in memory on 172.31.9.98:33869 (size: 7.8 MiB, free: 1988.9 MiB)
+24/11/08 07:51:52 INFO BlockManagerInfo: Added rdd_6_1 in memory on 172.31.15.133:35213 (size: 7.8 MiB, free: 1996.8 MiB)
+24/11/08 07:51:52 INFO BlockManagerInfo: Added rdd_6_0 in memory on 172.31.15.133:35213 (size: 7.8 MiB, free: 1988.9 MiB)
+24/11/08 07:51:58 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 5) in 16445 ms on 172.31.15.133 (executor 0) (1/4)
+24/11/08 07:51:58 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 4) in 16472 ms on 172.31.15.133 (executor 0) (2/4)
+24/11/08 07:52:02 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 24132 ms on 172.31.9.98 (executor 1) (3/4)
+24/11/08 07:52:02 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 24816 ms on 172.31.9.98 (executor 1) (4/4)
+24/11/08 07:52:02 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+24/11/08 07:52:02 INFO DAGScheduler: ShuffleMapStage 1 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 24.847 s
+24/11/08 07:52:02 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:52:02 INFO DAGScheduler: running: Set()
+24/11/08 07:52:02 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 2, ShuffleMapStage 17, ShuffleMapStage 3, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 4, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 5, ShuffleMapStage 20, ShuffleMapStage 6, ResultStage 21, ShuffleMapStage 7, ShuffleMapStage 14, ShuffleMapStage 8)
+24/11/08 07:52:02 INFO DAGScheduler: failed: Set()
+24/11/08 07:52:02 INFO DAGScheduler: Submitting ShuffleMapStage 2 (PairwiseRDD[15] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:52:02 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 14.8 KiB, free 2004.2 MiB)
+24/11/08 07:52:02 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2004.1 MiB)
+24/11/08 07:52:02 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:52:02 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:52:02 INFO DAGScheduler: Submitting 4 missing tasks from ShuffleMapStage 2 (PairwiseRDD[15] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+24/11/08 07:52:02 INFO TaskSchedulerImpl: Adding task set 2.0 with 4 tasks resource profile 0
+24/11/08 07:52:02 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 6) (172.31.9.98, executor 1, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:02 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 7) (172.31.9.98, executor 1, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:03 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:52:03 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 19 to 172.31.9.98:36700
+24/11/08 07:52:06 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 8) (172.31.15.133, executor 0, partition 2, ANY, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:06 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 9) (172.31.15.133, executor 0, partition 3, ANY, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:06 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:52:06 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 19 to 172.31.15.133:46032
+24/11/08 07:52:12 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 6) in 9414 ms on 172.31.9.98 (executor 1) (1/4)
+24/11/08 07:52:12 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 7) in 9459 ms on 172.31.9.98 (executor 1) (2/4)
+24/11/08 07:52:16 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 9) in 9221 ms on 172.31.15.133 (executor 0) (3/4)
+24/11/08 07:52:16 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 8) in 9354 ms on 172.31.15.133 (executor 0) (4/4)
+24/11/08 07:52:16 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+24/11/08 07:52:16 INFO DAGScheduler: ShuffleMapStage 2 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 13.276 s
+24/11/08 07:52:16 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:52:16 INFO DAGScheduler: running: Set()
+24/11/08 07:52:16 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 3, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 4, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 5, ShuffleMapStage 20, ShuffleMapStage 6, ResultStage 21, ShuffleMapStage 7, ShuffleMapStage 14, ShuffleMapStage 8)
+24/11/08 07:52:16 INFO DAGScheduler: failed: Set()
+24/11/08 07:52:16 INFO DAGScheduler: Submitting ShuffleMapStage 3 (PairwiseRDD[22] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:52:16 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 20.7 KiB, free 2004.1 MiB)
+24/11/08 07:52:16 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2004.1 MiB)
+24/11/08 07:52:16 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:52:16 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:52:16 INFO DAGScheduler: Submitting 6 missing tasks from ShuffleMapStage 3 (PairwiseRDD[22] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5))
+24/11/08 07:52:16 INFO TaskSchedulerImpl: Adding task set 3.0 with 6 tasks resource profile 0
+24/11/08 07:52:16 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 10) (172.31.9.98, executor 1, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:16 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 11) (172.31.15.133, executor 0, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:16 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 12) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:16 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 13) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:16 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:52:16 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:52:16 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 18 to 172.31.9.98:36700
+24/11/08 07:52:16 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 18 to 172.31.15.133:46032
+24/11/08 07:52:19 INFO TaskSetManager: Starting task 4.0 in stage 3.0 (TID 14) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:19 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 12) in 2996 ms on 172.31.9.98 (executor 1) (1/6)
+24/11/08 07:52:19 INFO TaskSetManager: Starting task 5.0 in stage 3.0 (TID 15) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:19 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 13) in 3176 ms on 172.31.15.133 (executor 0) (2/6)
+24/11/08 07:52:22 INFO TaskSetManager: Finished task 4.0 in stage 3.0 (TID 14) in 3087 ms on 172.31.9.98 (executor 1) (3/6)
+24/11/08 07:52:22 INFO TaskSetManager: Finished task 5.0 in stage 3.0 (TID 15) in 3239 ms on 172.31.15.133 (executor 0) (4/6)
+24/11/08 07:52:28 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 10) in 12389 ms on 172.31.9.98 (executor 1) (5/6)
+24/11/08 07:52:28 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 11) in 12493 ms on 172.31.15.133 (executor 0) (6/6)
+24/11/08 07:52:28 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+24/11/08 07:52:28 INFO DAGScheduler: ShuffleMapStage 3 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 12.510 s
+24/11/08 07:52:28 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:52:28 INFO DAGScheduler: running: Set()
+24/11/08 07:52:28 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 4, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 5, ShuffleMapStage 20, ShuffleMapStage 6, ResultStage 21, ShuffleMapStage 7, ShuffleMapStage 14, ShuffleMapStage 8)
+24/11/08 07:52:28 INFO DAGScheduler: failed: Set()
+24/11/08 07:52:28 INFO DAGScheduler: Submitting ShuffleMapStage 4 (PairwiseRDD[26] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:52:28 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 14.8 KiB, free 2004.1 MiB)
+24/11/08 07:52:28 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2004.1 MiB)
+24/11/08 07:52:28 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:52:28 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:52:28 INFO DAGScheduler: Submitting 6 missing tasks from ShuffleMapStage 4 (PairwiseRDD[26] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5))
+24/11/08 07:52:28 INFO TaskSchedulerImpl: Adding task set 4.0 with 6 tasks resource profile 0
+24/11/08 07:52:28 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 16) (172.31.9.98, executor 1, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:28 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 17) (172.31.15.133, executor 0, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:28 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 18) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:28 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 19) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:28 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:52:28 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 17 to 172.31.9.98:36700
+24/11/08 07:52:28 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:52:28 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 17 to 172.31.15.133:46032
+24/11/08 07:52:34 INFO TaskSetManager: Starting task 4.0 in stage 4.0 (TID 20) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:34 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 16) in 5981 ms on 172.31.9.98 (executor 1) (1/6)
+24/11/08 07:52:34 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 18) in 6038 ms on 172.31.9.98 (executor 1) (2/6)
+24/11/08 07:52:35 INFO TaskSetManager: Starting task 5.0 in stage 4.0 (TID 21) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:35 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 19) in 6281 ms on 172.31.15.133 (executor 0) (3/6)
+24/11/08 07:52:35 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 17) in 6306 ms on 172.31.15.133 (executor 0) (4/6)
+24/11/08 07:52:38 INFO TaskSetManager: Finished task 4.0 in stage 4.0 (TID 20) in 4194 ms on 172.31.9.98 (executor 1) (5/6)
+24/11/08 07:52:39 INFO TaskSetManager: Finished task 5.0 in stage 4.0 (TID 21) in 4698 ms on 172.31.15.133 (executor 0) (6/6)
+24/11/08 07:52:39 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+24/11/08 07:52:39 INFO DAGScheduler: ShuffleMapStage 4 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 10.994 s
+24/11/08 07:52:39 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:52:39 INFO DAGScheduler: running: Set()
+24/11/08 07:52:39 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 5, ShuffleMapStage 20, ShuffleMapStage 6, ResultStage 21, ShuffleMapStage 7, ShuffleMapStage 14, ShuffleMapStage 8)
+24/11/08 07:52:39 INFO DAGScheduler: failed: Set()
+24/11/08 07:52:39 INFO DAGScheduler: Submitting ShuffleMapStage 5 (PairwiseRDD[33] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:52:39 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 20.7 KiB, free 2004.1 MiB)
+24/11/08 07:52:39 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2004.1 MiB)
+24/11/08 07:52:39 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:52:39 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:52:39 INFO DAGScheduler: Submitting 8 missing tasks from ShuffleMapStage 5 (PairwiseRDD[33] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+24/11/08 07:52:39 INFO TaskSchedulerImpl: Adding task set 5.0 with 8 tasks resource profile 0
+24/11/08 07:52:39 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 22) (172.31.15.133, executor 0, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:39 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 23) (172.31.9.98, executor 1, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:39 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 24) (172.31.15.133, executor 0, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:39 INFO TaskSetManager: Starting task 3.0 in stage 5.0 (TID 25) (172.31.9.98, executor 1, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:39 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:52:39 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:52:39 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 16 to 172.31.9.98:36700
+24/11/08 07:52:39 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 16 to 172.31.15.133:46032
+24/11/08 07:52:42 INFO TaskSetManager: Starting task 4.0 in stage 5.0 (TID 26) (172.31.15.133, executor 0, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:42 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 24) in 2316 ms on 172.31.15.133 (executor 0) (1/8)
+24/11/08 07:52:42 INFO TaskSetManager: Starting task 5.0 in stage 5.0 (TID 27) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:42 INFO TaskSetManager: Finished task 3.0 in stage 5.0 (TID 25) in 2426 ms on 172.31.9.98 (executor 1) (2/8)
+24/11/08 07:52:44 INFO TaskSetManager: Starting task 6.0 in stage 5.0 (TID 28) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:44 INFO TaskSetManager: Finished task 4.0 in stage 5.0 (TID 26) in 2622 ms on 172.31.15.133 (executor 0) (3/8)
+24/11/08 07:52:45 INFO TaskSetManager: Starting task 7.0 in stage 5.0 (TID 29) (172.31.9.98, executor 1, partition 7, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:52:45 INFO TaskSetManager: Finished task 5.0 in stage 5.0 (TID 27) in 2896 ms on 172.31.9.98 (executor 1) (4/8)
+24/11/08 07:52:46 INFO TaskSetManager: Finished task 6.0 in stage 5.0 (TID 28) in 2283 ms on 172.31.15.133 (executor 0) (5/8)
+24/11/08 07:52:47 INFO TaskSetManager: Finished task 7.0 in stage 5.0 (TID 29) in 2374 ms on 172.31.9.98 (executor 1) (6/8)
+24/11/08 07:52:52 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 23) in 12633 ms on 172.31.9.98 (executor 1) (7/8)
+24/11/08 07:52:53 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 22) in 13405 ms on 172.31.15.133 (executor 0) (8/8)
+24/11/08 07:52:53 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+24/11/08 07:52:53 INFO DAGScheduler: ShuffleMapStage 5 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 13.428 s
+24/11/08 07:52:53 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:52:53 INFO DAGScheduler: running: Set()
+24/11/08 07:52:53 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ShuffleMapStage 6, ResultStage 21, ShuffleMapStage 7, ShuffleMapStage 14, ShuffleMapStage 8)
+24/11/08 07:52:53 INFO DAGScheduler: failed: Set()
+24/11/08 07:52:53 INFO DAGScheduler: Submitting ShuffleMapStage 6 (PairwiseRDD[37] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:52:53 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 14.8 KiB, free 2004.1 MiB)
+24/11/08 07:52:53 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2004.0 MiB)
+24/11/08 07:52:53 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:52:53 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:52:53 INFO DAGScheduler: Submitting 8 missing tasks from ShuffleMapStage 6 (PairwiseRDD[37] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+24/11/08 07:52:53 INFO TaskSchedulerImpl: Adding task set 6.0 with 8 tasks resource profile 0
+24/11/08 07:52:53 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 30) (172.31.9.98, executor 1, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:53 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 31) (172.31.15.133, executor 0, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:53 INFO TaskSetManager: Starting task 3.0 in stage 6.0 (TID 32) (172.31.9.98, executor 1, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:53 INFO TaskSetManager: Starting task 2.0 in stage 6.0 (TID 33) (172.31.15.133, executor 0, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:53 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:52:53 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:52:53 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 15 to 172.31.15.133:46032
+24/11/08 07:52:53 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 15 to 172.31.9.98:36700
+24/11/08 07:52:57 INFO TaskSetManager: Starting task 5.0 in stage 6.0 (TID 34) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:57 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 30) in 4383 ms on 172.31.9.98 (executor 1) (1/8)
+24/11/08 07:52:57 INFO TaskSetManager: Starting task 7.0 in stage 6.0 (TID 35) (172.31.9.98, executor 1, partition 7, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:57 INFO TaskSetManager: Finished task 3.0 in stage 6.0 (TID 32) in 4387 ms on 172.31.9.98 (executor 1) (2/8)
+24/11/08 07:52:58 INFO TaskSetManager: Starting task 4.0 in stage 6.0 (TID 36) (172.31.15.133, executor 0, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:58 INFO TaskSetManager: Finished task 2.0 in stage 6.0 (TID 33) in 5063 ms on 172.31.15.133 (executor 0) (3/8)
+24/11/08 07:52:58 INFO TaskSetManager: Starting task 6.0 in stage 6.0 (TID 37) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:52:58 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 31) in 5121 ms on 172.31.15.133 (executor 0) (4/8)
+24/11/08 07:53:01 INFO TaskSetManager: Finished task 5.0 in stage 6.0 (TID 34) in 4262 ms on 172.31.9.98 (executor 1) (5/8)
+24/11/08 07:53:01 INFO TaskSetManager: Finished task 7.0 in stage 6.0 (TID 35) in 4317 ms on 172.31.9.98 (executor 1) (6/8)
+24/11/08 07:53:03 INFO TaskSetManager: Finished task 4.0 in stage 6.0 (TID 36) in 4893 ms on 172.31.15.133 (executor 0) (7/8)
+24/11/08 07:53:03 INFO TaskSetManager: Finished task 6.0 in stage 6.0 (TID 37) in 4899 ms on 172.31.15.133 (executor 0) (8/8)
+24/11/08 07:53:03 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+24/11/08 07:53:03 INFO DAGScheduler: ShuffleMapStage 6 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 10.032 s
+24/11/08 07:53:03 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:53:03 INFO DAGScheduler: running: Set()
+24/11/08 07:53:03 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ResultStage 21, ShuffleMapStage 7, ShuffleMapStage 14, ShuffleMapStage 8)
+24/11/08 07:53:03 INFO DAGScheduler: failed: Set()
+24/11/08 07:53:03 INFO DAGScheduler: Submitting ShuffleMapStage 7 (PairwiseRDD[44] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:53:03 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 20.7 KiB, free 2004.0 MiB)
+24/11/08 07:53:03 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2004.0 MiB)
+24/11/08 07:53:03 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:53:03 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:53:03 INFO DAGScheduler: Submitting 10 missing tasks from ShuffleMapStage 7 (PairwiseRDD[44] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
+24/11/08 07:53:03 INFO TaskSchedulerImpl: Adding task set 7.0 with 10 tasks resource profile 0
+24/11/08 07:53:03 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 38) (172.31.9.98, executor 1, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:03 INFO TaskSetManager: Starting task 1.0 in stage 7.0 (TID 39) (172.31.15.133, executor 0, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:03 INFO TaskSetManager: Starting task 2.0 in stage 7.0 (TID 40) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:03 INFO TaskSetManager: Starting task 3.0 in stage 7.0 (TID 41) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:03 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:53:03 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:03 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 14 to 172.31.9.98:36700
+24/11/08 07:53:03 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 14 to 172.31.15.133:46032
+24/11/08 07:53:04 INFO TaskSetManager: Starting task 4.0 in stage 7.0 (TID 42) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:04 INFO TaskSetManager: Finished task 2.0 in stage 7.0 (TID 40) in 1685 ms on 172.31.9.98 (executor 1) (1/10)
+24/11/08 07:53:05 INFO TaskSetManager: Starting task 5.0 in stage 7.0 (TID 43) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:05 INFO TaskSetManager: Finished task 3.0 in stage 7.0 (TID 41) in 2014 ms on 172.31.15.133 (executor 0) (2/10)
+24/11/08 07:53:06 INFO TaskSetManager: Starting task 6.0 in stage 7.0 (TID 44) (172.31.9.98, executor 1, partition 6, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:06 INFO TaskSetManager: Finished task 4.0 in stage 7.0 (TID 42) in 1814 ms on 172.31.9.98 (executor 1) (3/10)
+24/11/08 07:53:07 INFO TaskSetManager: Starting task 7.0 in stage 7.0 (TID 45) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:07 INFO TaskSetManager: Finished task 5.0 in stage 7.0 (TID 43) in 2299 ms on 172.31.15.133 (executor 0) (4/10)
+24/11/08 07:53:08 INFO TaskSetManager: Starting task 8.0 in stage 7.0 (TID 46) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:08 INFO TaskSetManager: Finished task 6.0 in stage 7.0 (TID 44) in 1900 ms on 172.31.9.98 (executor 1) (5/10)
+24/11/08 07:53:09 INFO TaskSetManager: Starting task 9.0 in stage 7.0 (TID 47) (172.31.15.133, executor 0, partition 9, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:09 INFO TaskSetManager: Finished task 7.0 in stage 7.0 (TID 45) in 2039 ms on 172.31.15.133 (executor 0) (6/10)
+24/11/08 07:53:10 INFO TaskSetManager: Finished task 8.0 in stage 7.0 (TID 46) in 1963 ms on 172.31.9.98 (executor 1) (7/10)
+24/11/08 07:53:11 INFO TaskSetManager: Finished task 9.0 in stage 7.0 (TID 47) in 2143 ms on 172.31.15.133 (executor 0) (8/10)
+24/11/08 07:53:15 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 38) in 12490 ms on 172.31.9.98 (executor 1) (9/10)
+24/11/08 07:53:16 INFO TaskSetManager: Finished task 1.0 in stage 7.0 (TID 39) in 13679 ms on 172.31.15.133 (executor 0) (10/10)
+24/11/08 07:53:16 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+24/11/08 07:53:16 INFO DAGScheduler: ShuffleMapStage 7 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 13.699 s
+24/11/08 07:53:16 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:53:16 INFO DAGScheduler: running: Set()
+24/11/08 07:53:16 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ResultStage 21, ShuffleMapStage 14, ShuffleMapStage 8)
+24/11/08 07:53:16 INFO DAGScheduler: failed: Set()
+24/11/08 07:53:16 INFO DAGScheduler: Submitting ShuffleMapStage 8 (PairwiseRDD[48] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:53:16 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 14.8 KiB, free 2004.0 MiB)
+24/11/08 07:53:16 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2004.0 MiB)
+24/11/08 07:53:16 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:53:16 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:53:16 INFO DAGScheduler: Submitting 10 missing tasks from ShuffleMapStage 8 (PairwiseRDD[48] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
+24/11/08 07:53:16 INFO TaskSchedulerImpl: Adding task set 8.0 with 10 tasks resource profile 0
+24/11/08 07:53:16 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 48) (172.31.9.98, executor 1, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:16 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 49) (172.31.15.133, executor 0, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:16 INFO TaskSetManager: Starting task 2.0 in stage 8.0 (TID 50) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:16 INFO TaskSetManager: Starting task 3.0 in stage 8.0 (TID 51) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:16 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:53:16 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 13 to 172.31.9.98:36700
+24/11/08 07:53:16 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:16 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 13 to 172.31.15.133:46032
+24/11/08 07:53:20 INFO TaskSetManager: Starting task 5.0 in stage 8.0 (TID 52) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:20 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 49) in 3502 ms on 172.31.15.133 (executor 0) (1/10)
+24/11/08 07:53:20 INFO TaskSetManager: Starting task 4.0 in stage 8.0 (TID 53) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:20 INFO TaskSetManager: Starting task 7.0 in stage 8.0 (TID 54) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:20 INFO TaskSetManager: Finished task 3.0 in stage 8.0 (TID 51) in 3508 ms on 172.31.15.133 (executor 0) (2/10)
+24/11/08 07:53:20 INFO TaskSetManager: Finished task 2.0 in stage 8.0 (TID 50) in 3509 ms on 172.31.9.98 (executor 1) (3/10)
+24/11/08 07:53:20 INFO TaskSetManager: Starting task 6.0 in stage 8.0 (TID 55) (172.31.9.98, executor 1, partition 6, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:20 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 48) in 3524 ms on 172.31.9.98 (executor 1) (4/10)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_4_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_8_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_8_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_8_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_1_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 7.8 KiB, free: 2004.5 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.31.9.98:33869 in memory (size: 7.8 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_7_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_7_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_7_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_3_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_6_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_6_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_6_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_5_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.6 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_2_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.4 KiB, free: 2004.6 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.31.9.98:33869 in memory (size: 8.4 KiB, free: 1988.9 MiB)
+24/11/08 07:53:20 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.31.15.133:35213 in memory (size: 8.4 KiB, free: 1988.9 MiB)
+24/11/08 07:53:24 INFO TaskSetManager: Starting task 8.0 in stage 8.0 (TID 56) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:24 INFO TaskSetManager: Finished task 4.0 in stage 8.0 (TID 53) in 3599 ms on 172.31.9.98 (executor 1) (5/10)
+24/11/08 07:53:24 INFO TaskSetManager: Starting task 9.0 in stage 8.0 (TID 57) (172.31.15.133, executor 0, partition 9, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:24 INFO TaskSetManager: Finished task 5.0 in stage 8.0 (TID 52) in 3616 ms on 172.31.15.133 (executor 0) (6/10)
+24/11/08 07:53:24 INFO TaskSetManager: Finished task 7.0 in stage 8.0 (TID 54) in 3668 ms on 172.31.15.133 (executor 0) (7/10)
+24/11/08 07:53:24 INFO TaskSetManager: Finished task 6.0 in stage 8.0 (TID 55) in 3716 ms on 172.31.9.98 (executor 1) (8/10)
+24/11/08 07:53:26 INFO TaskSetManager: Finished task 9.0 in stage 8.0 (TID 57) in 2406 ms on 172.31.15.133 (executor 0) (9/10)
+24/11/08 07:53:26 INFO TaskSetManager: Finished task 8.0 in stage 8.0 (TID 56) in 2539 ms on 172.31.9.98 (executor 1) (10/10)
+24/11/08 07:53:26 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+24/11/08 07:53:26 INFO DAGScheduler: ShuffleMapStage 8 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 9.657 s
+24/11/08 07:53:26 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:53:26 INFO DAGScheduler: running: Set()
+24/11/08 07:53:26 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 9, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ResultStage 21, ShuffleMapStage 14)
+24/11/08 07:53:26 INFO DAGScheduler: failed: Set()
+24/11/08 07:53:26 INFO DAGScheduler: Submitting ShuffleMapStage 9 (PairwiseRDD[55] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:53:26 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 20.7 KiB, free 2004.2 MiB)
+24/11/08 07:53:26 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2004.2 MiB)
+24/11/08 07:53:26 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.6 MiB)
+24/11/08 07:53:26 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:53:26 INFO DAGScheduler: Submitting 12 missing tasks from ShuffleMapStage 9 (PairwiseRDD[55] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
+24/11/08 07:53:26 INFO TaskSchedulerImpl: Adding task set 9.0 with 12 tasks resource profile 0
+24/11/08 07:53:26 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 58) (172.31.15.133, executor 0, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:26 INFO TaskSetManager: Starting task 1.0 in stage 9.0 (TID 59) (172.31.9.98, executor 1, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:26 INFO TaskSetManager: Starting task 2.0 in stage 9.0 (TID 60) (172.31.15.133, executor 0, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:26 INFO TaskSetManager: Starting task 3.0 in stage 9.0 (TID 61) (172.31.9.98, executor 1, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:26 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:26 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:26 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 12 to 172.31.9.98:36700
+24/11/08 07:53:26 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 12 to 172.31.15.133:46032
+24/11/08 07:53:28 INFO TaskSetManager: Starting task 4.0 in stage 9.0 (TID 62) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:28 INFO TaskSetManager: Finished task 3.0 in stage 9.0 (TID 61) in 1791 ms on 172.31.9.98 (executor 1) (1/12)
+24/11/08 07:53:28 INFO TaskSetManager: Starting task 5.0 in stage 9.0 (TID 63) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:28 INFO TaskSetManager: Finished task 2.0 in stage 9.0 (TID 60) in 2016 ms on 172.31.15.133 (executor 0) (2/12)
+24/11/08 07:53:30 INFO TaskSetManager: Starting task 6.0 in stage 9.0 (TID 64) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:30 INFO TaskSetManager: Finished task 5.0 in stage 9.0 (TID 63) in 1578 ms on 172.31.15.133 (executor 0) (3/12)
+24/11/08 07:53:30 INFO TaskSetManager: Starting task 7.0 in stage 9.0 (TID 65) (172.31.9.98, executor 1, partition 7, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:30 INFO TaskSetManager: Finished task 4.0 in stage 9.0 (TID 62) in 1977 ms on 172.31.9.98 (executor 1) (4/12)
+24/11/08 07:53:31 INFO TaskSetManager: Starting task 8.0 in stage 9.0 (TID 66) (172.31.15.133, executor 0, partition 8, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:31 INFO TaskSetManager: Finished task 6.0 in stage 9.0 (TID 64) in 1632 ms on 172.31.15.133 (executor 0) (5/12)
+24/11/08 07:53:32 INFO TaskSetManager: Starting task 9.0 in stage 9.0 (TID 67) (172.31.9.98, executor 1, partition 9, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:32 INFO TaskSetManager: Finished task 7.0 in stage 9.0 (TID 65) in 1720 ms on 172.31.9.98 (executor 1) (6/12)
+24/11/08 07:53:33 INFO TaskSetManager: Starting task 10.0 in stage 9.0 (TID 68) (172.31.15.133, executor 0, partition 10, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:33 INFO TaskSetManager: Finished task 8.0 in stage 9.0 (TID 66) in 1553 ms on 172.31.15.133 (executor 0) (7/12)
+24/11/08 07:53:33 INFO TaskSetManager: Starting task 11.0 in stage 9.0 (TID 69) (172.31.9.98, executor 1, partition 11, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:33 INFO TaskSetManager: Finished task 9.0 in stage 9.0 (TID 67) in 1682 ms on 172.31.9.98 (executor 1) (8/12)
+24/11/08 07:53:35 INFO TaskSetManager: Finished task 10.0 in stage 9.0 (TID 68) in 1715 ms on 172.31.15.133 (executor 0) (9/12)
+24/11/08 07:53:35 INFO TaskSetManager: Finished task 11.0 in stage 9.0 (TID 69) in 1801 ms on 172.31.9.98 (executor 1) (10/12)
+24/11/08 07:53:40 INFO TaskSetManager: Finished task 1.0 in stage 9.0 (TID 59) in 13397 ms on 172.31.9.98 (executor 1) (11/12)
+24/11/08 07:53:40 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 58) in 13586 ms on 172.31.15.133 (executor 0) (12/12)
+24/11/08 07:53:40 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+24/11/08 07:53:40 INFO DAGScheduler: ShuffleMapStage 9 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 13.598 s
+24/11/08 07:53:40 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:53:40 INFO DAGScheduler: running: Set()
+24/11/08 07:53:40 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 10, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ResultStage 21, ShuffleMapStage 14)
+24/11/08 07:53:40 INFO DAGScheduler: failed: Set()
+24/11/08 07:53:40 INFO DAGScheduler: Submitting ShuffleMapStage 10 (PairwiseRDD[59] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:53:40 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 14.8 KiB, free 2004.2 MiB)
+24/11/08 07:53:40 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2004.1 MiB)
+24/11/08 07:53:40 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:53:40 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:53:40 INFO DAGScheduler: Submitting 12 missing tasks from ShuffleMapStage 10 (PairwiseRDD[59] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11))
+24/11/08 07:53:40 INFO TaskSchedulerImpl: Adding task set 10.0 with 12 tasks resource profile 0
+24/11/08 07:53:40 INFO TaskSetManager: Starting task 1.0 in stage 10.0 (TID 70) (172.31.9.98, executor 1, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:40 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 71) (172.31.15.133, executor 0, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:40 INFO TaskSetManager: Starting task 3.0 in stage 10.0 (TID 72) (172.31.9.98, executor 1, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:40 INFO TaskSetManager: Starting task 2.0 in stage 10.0 (TID 73) (172.31.15.133, executor 0, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:40 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:40 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:53:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 11 to 172.31.9.98:36700
+24/11/08 07:53:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 11 to 172.31.15.133:46032
+24/11/08 07:53:43 INFO TaskSetManager: Starting task 5.0 in stage 10.0 (TID 74) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:43 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 71) in 3141 ms on 172.31.15.133 (executor 0) (1/12)
+24/11/08 07:53:43 INFO TaskSetManager: Starting task 4.0 in stage 10.0 (TID 75) (172.31.15.133, executor 0, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:43 INFO TaskSetManager: Finished task 3.0 in stage 10.0 (TID 72) in 3142 ms on 172.31.9.98 (executor 1) (2/12)
+24/11/08 07:53:43 INFO TaskSetManager: Starting task 7.0 in stage 10.0 (TID 76) (172.31.9.98, executor 1, partition 7, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:43 INFO TaskSetManager: Finished task 1.0 in stage 10.0 (TID 70) in 3243 ms on 172.31.9.98 (executor 1) (3/12)
+24/11/08 07:53:43 INFO TaskSetManager: Starting task 6.0 in stage 10.0 (TID 77) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:43 INFO TaskSetManager: Finished task 2.0 in stage 10.0 (TID 73) in 3277 ms on 172.31.15.133 (executor 0) (4/12)
+24/11/08 07:53:46 INFO TaskSetManager: Starting task 9.0 in stage 10.0 (TID 78) (172.31.9.98, executor 1, partition 9, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:46 INFO TaskSetManager: Finished task 5.0 in stage 10.0 (TID 74) in 2795 ms on 172.31.9.98 (executor 1) (5/12)
+24/11/08 07:53:46 INFO TaskSetManager: Starting task 11.0 in stage 10.0 (TID 79) (172.31.9.98, executor 1, partition 11, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:46 INFO TaskSetManager: Finished task 7.0 in stage 10.0 (TID 76) in 2835 ms on 172.31.9.98 (executor 1) (6/12)
+24/11/08 07:53:46 INFO TaskSetManager: Starting task 8.0 in stage 10.0 (TID 80) (172.31.15.133, executor 0, partition 8, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:46 INFO TaskSetManager: Finished task 4.0 in stage 10.0 (TID 75) in 3352 ms on 172.31.15.133 (executor 0) (7/12)
+24/11/08 07:53:46 INFO TaskSetManager: Starting task 10.0 in stage 10.0 (TID 81) (172.31.15.133, executor 0, partition 10, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:53:46 INFO TaskSetManager: Finished task 6.0 in stage 10.0 (TID 77) in 3274 ms on 172.31.15.133 (executor 0) (8/12)
+24/11/08 07:53:48 INFO TaskSetManager: Finished task 9.0 in stage 10.0 (TID 78) in 2829 ms on 172.31.9.98 (executor 1) (9/12)
+24/11/08 07:53:49 INFO TaskSetManager: Finished task 11.0 in stage 10.0 (TID 79) in 2814 ms on 172.31.9.98 (executor 1) (10/12)
+24/11/08 07:53:49 INFO TaskSetManager: Finished task 8.0 in stage 10.0 (TID 80) in 3101 ms on 172.31.15.133 (executor 0) (11/12)
+24/11/08 07:53:49 INFO TaskSetManager: Finished task 10.0 in stage 10.0 (TID 81) in 3076 ms on 172.31.15.133 (executor 0) (12/12)
+24/11/08 07:53:49 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+24/11/08 07:53:49 INFO DAGScheduler: ShuffleMapStage 10 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 9.637 s
+24/11/08 07:53:49 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:53:49 INFO DAGScheduler: running: Set()
+24/11/08 07:53:49 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 11, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ResultStage 21, ShuffleMapStage 14)
+24/11/08 07:53:49 INFO DAGScheduler: failed: Set()
+24/11/08 07:53:49 INFO DAGScheduler: Submitting ShuffleMapStage 11 (PairwiseRDD[66] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:53:49 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 20.7 KiB, free 2004.1 MiB)
+24/11/08 07:53:49 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2004.1 MiB)
+24/11/08 07:53:49 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:53:49 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:53:49 INFO DAGScheduler: Submitting 14 missing tasks from ShuffleMapStage 11 (PairwiseRDD[66] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
+24/11/08 07:53:49 INFO TaskSchedulerImpl: Adding task set 11.0 with 14 tasks resource profile 0
+24/11/08 07:53:49 INFO TaskSetManager: Starting task 0.0 in stage 11.0 (TID 82) (172.31.9.98, executor 1, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:49 INFO TaskSetManager: Starting task 1.0 in stage 11.0 (TID 83) (172.31.15.133, executor 0, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:49 INFO TaskSetManager: Starting task 2.0 in stage 11.0 (TID 84) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:49 INFO TaskSetManager: Starting task 3.0 in stage 11.0 (TID 85) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:49 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:49 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:53:49 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 10 to 172.31.9.98:36700
+24/11/08 07:53:49 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 10 to 172.31.15.133:46032
+24/11/08 07:53:51 INFO TaskSetManager: Starting task 4.0 in stage 11.0 (TID 86) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:51 INFO TaskSetManager: Finished task 2.0 in stage 11.0 (TID 84) in 1487 ms on 172.31.9.98 (executor 1) (1/14)
+24/11/08 07:53:51 INFO TaskSetManager: Starting task 5.0 in stage 11.0 (TID 87) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:51 INFO TaskSetManager: Finished task 3.0 in stage 11.0 (TID 85) in 1731 ms on 172.31.15.133 (executor 0) (2/14)
+24/11/08 07:53:52 INFO TaskSetManager: Starting task 6.0 in stage 11.0 (TID 88) (172.31.9.98, executor 1, partition 6, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:52 INFO TaskSetManager: Finished task 4.0 in stage 11.0 (TID 86) in 1333 ms on 172.31.9.98 (executor 1) (3/14)
+24/11/08 07:53:52 INFO TaskSetManager: Starting task 7.0 in stage 11.0 (TID 89) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:52 INFO TaskSetManager: Finished task 5.0 in stage 11.0 (TID 87) in 1368 ms on 172.31.15.133 (executor 0) (4/14)
+24/11/08 07:53:53 INFO TaskSetManager: Starting task 8.0 in stage 11.0 (TID 90) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:53 INFO TaskSetManager: Finished task 6.0 in stage 11.0 (TID 88) in 1297 ms on 172.31.9.98 (executor 1) (5/14)
+24/11/08 07:53:54 INFO TaskSetManager: Starting task 9.0 in stage 11.0 (TID 91) (172.31.15.133, executor 0, partition 9, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:54 INFO TaskSetManager: Finished task 7.0 in stage 11.0 (TID 89) in 1311 ms on 172.31.15.133 (executor 0) (6/14)
+24/11/08 07:53:55 INFO TaskSetManager: Starting task 10.0 in stage 11.0 (TID 92) (172.31.9.98, executor 1, partition 10, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:55 INFO TaskSetManager: Finished task 8.0 in stage 11.0 (TID 90) in 1365 ms on 172.31.9.98 (executor 1) (7/14)
+24/11/08 07:53:55 INFO TaskSetManager: Starting task 11.0 in stage 11.0 (TID 93) (172.31.15.133, executor 0, partition 11, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:55 INFO TaskSetManager: Finished task 9.0 in stage 11.0 (TID 91) in 1578 ms on 172.31.15.133 (executor 0) (8/14)
+24/11/08 07:53:56 INFO TaskSetManager: Starting task 12.0 in stage 11.0 (TID 94) (172.31.9.98, executor 1, partition 12, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:56 INFO TaskSetManager: Finished task 10.0 in stage 11.0 (TID 92) in 1277 ms on 172.31.9.98 (executor 1) (9/14)
+24/11/08 07:53:57 INFO TaskSetManager: Starting task 13.0 in stage 11.0 (TID 95) (172.31.15.133, executor 0, partition 13, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:53:57 INFO TaskSetManager: Finished task 11.0 in stage 11.0 (TID 93) in 1564 ms on 172.31.15.133 (executor 0) (10/14)
+24/11/08 07:53:58 INFO TaskSetManager: Finished task 12.0 in stage 11.0 (TID 94) in 1501 ms on 172.31.9.98 (executor 1) (11/14)
+24/11/08 07:53:58 INFO TaskSetManager: Finished task 13.0 in stage 11.0 (TID 95) in 1285 ms on 172.31.15.133 (executor 0) (12/14)
+24/11/08 07:54:03 INFO TaskSetManager: Finished task 0.0 in stage 11.0 (TID 82) in 13589 ms on 172.31.9.98 (executor 1) (13/14)
+24/11/08 07:54:03 INFO TaskSetManager: Finished task 1.0 in stage 11.0 (TID 83) in 13821 ms on 172.31.15.133 (executor 0) (14/14)
+24/11/08 07:54:03 INFO TaskSchedulerImpl: Removed TaskSet 11.0, whose tasks have all completed, from pool 
+24/11/08 07:54:03 INFO DAGScheduler: ShuffleMapStage 11 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 13.839 s
+24/11/08 07:54:03 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:54:03 INFO DAGScheduler: running: Set()
+24/11/08 07:54:03 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 12, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ResultStage 21, ShuffleMapStage 14)
+24/11/08 07:54:03 INFO DAGScheduler: failed: Set()
+24/11/08 07:54:03 INFO DAGScheduler: Submitting ShuffleMapStage 12 (PairwiseRDD[70] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:54:03 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 14.8 KiB, free 2004.1 MiB)
+24/11/08 07:54:03 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2004.1 MiB)
+24/11/08 07:54:03 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:54:03 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:54:03 INFO DAGScheduler: Submitting 14 missing tasks from ShuffleMapStage 12 (PairwiseRDD[70] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13))
+24/11/08 07:54:03 INFO TaskSchedulerImpl: Adding task set 12.0 with 14 tasks resource profile 0
+24/11/08 07:54:03 INFO TaskSetManager: Starting task 0.0 in stage 12.0 (TID 96) (172.31.9.98, executor 1, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:03 INFO TaskSetManager: Starting task 1.0 in stage 12.0 (TID 97) (172.31.15.133, executor 0, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:03 INFO TaskSetManager: Starting task 2.0 in stage 12.0 (TID 98) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:03 INFO TaskSetManager: Starting task 3.0 in stage 12.0 (TID 99) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:03 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:54:03 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:54:03 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 9 to 172.31.15.133:46032
+24/11/08 07:54:03 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 9 to 172.31.9.98:36700
+24/11/08 07:54:06 INFO TaskSetManager: Starting task 5.0 in stage 12.0 (TID 100) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:06 INFO TaskSetManager: Finished task 1.0 in stage 12.0 (TID 97) in 2522 ms on 172.31.15.133 (executor 0) (1/14)
+24/11/08 07:54:06 INFO TaskSetManager: Starting task 7.0 in stage 12.0 (TID 101) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:06 INFO TaskSetManager: Finished task 3.0 in stage 12.0 (TID 99) in 2540 ms on 172.31.15.133 (executor 0) (2/14)
+24/11/08 07:54:06 INFO TaskSetManager: Starting task 4.0 in stage 12.0 (TID 102) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:06 INFO TaskSetManager: Finished task 2.0 in stage 12.0 (TID 98) in 2663 ms on 172.31.9.98 (executor 1) (3/14)
+24/11/08 07:54:06 INFO TaskSetManager: Starting task 6.0 in stage 12.0 (TID 103) (172.31.9.98, executor 1, partition 6, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:06 INFO TaskSetManager: Finished task 0.0 in stage 12.0 (TID 96) in 2716 ms on 172.31.9.98 (executor 1) (4/14)
+24/11/08 07:54:08 INFO TaskSetManager: Starting task 9.0 in stage 12.0 (TID 104) (172.31.15.133, executor 0, partition 9, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:08 INFO TaskSetManager: Finished task 7.0 in stage 12.0 (TID 101) in 2451 ms on 172.31.15.133 (executor 0) (5/14)
+24/11/08 07:54:08 INFO TaskSetManager: Starting task 11.0 in stage 12.0 (TID 105) (172.31.15.133, executor 0, partition 11, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:08 INFO TaskSetManager: Finished task 5.0 in stage 12.0 (TID 100) in 2557 ms on 172.31.15.133 (executor 0) (6/14)
+24/11/08 07:54:08 INFO TaskSetManager: Starting task 8.0 in stage 12.0 (TID 106) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:08 INFO TaskSetManager: Starting task 10.0 in stage 12.0 (TID 107) (172.31.9.98, executor 1, partition 10, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:08 INFO TaskSetManager: Finished task 4.0 in stage 12.0 (TID 102) in 2486 ms on 172.31.9.98 (executor 1) (7/14)
+24/11/08 07:54:08 INFO TaskSetManager: Finished task 6.0 in stage 12.0 (TID 103) in 2439 ms on 172.31.9.98 (executor 1) (8/14)
+24/11/08 07:54:11 INFO TaskSetManager: Starting task 12.0 in stage 12.0 (TID 108) (172.31.9.98, executor 1, partition 12, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:11 INFO TaskSetManager: Finished task 10.0 in stage 12.0 (TID 107) in 2447 ms on 172.31.9.98 (executor 1) (9/14)
+24/11/08 07:54:11 INFO TaskSetManager: Finished task 8.0 in stage 12.0 (TID 106) in 2462 ms on 172.31.9.98 (executor 1) (10/14)
+24/11/08 07:54:11 INFO TaskSetManager: Starting task 13.0 in stage 12.0 (TID 109) (172.31.15.133, executor 0, partition 13, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:11 INFO TaskSetManager: Finished task 9.0 in stage 12.0 (TID 104) in 2647 ms on 172.31.15.133 (executor 0) (11/14)
+24/11/08 07:54:11 INFO TaskSetManager: Finished task 11.0 in stage 12.0 (TID 105) in 2673 ms on 172.31.15.133 (executor 0) (12/14)
+24/11/08 07:54:12 INFO TaskSetManager: Finished task 12.0 in stage 12.0 (TID 108) in 1676 ms on 172.31.9.98 (executor 1) (13/14)
+24/11/08 07:54:13 INFO TaskSetManager: Finished task 13.0 in stage 12.0 (TID 109) in 1737 ms on 172.31.15.133 (executor 0) (14/14)
+24/11/08 07:54:13 INFO TaskSchedulerImpl: Removed TaskSet 12.0, whose tasks have all completed, from pool 
+24/11/08 07:54:13 INFO DAGScheduler: ShuffleMapStage 12 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 9.383 s
+24/11/08 07:54:13 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:54:13 INFO DAGScheduler: running: Set()
+24/11/08 07:54:13 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 13, ShuffleMapStage 20, ResultStage 21, ShuffleMapStage 14)
+24/11/08 07:54:13 INFO DAGScheduler: failed: Set()
+24/11/08 07:54:13 INFO DAGScheduler: Submitting ShuffleMapStage 13 (PairwiseRDD[77] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:54:13 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 20.7 KiB, free 2004.1 MiB)
+24/11/08 07:54:13 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2004.1 MiB)
+24/11/08 07:54:13 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:54:13 INFO SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:54:13 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 13 (PairwiseRDD[77] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:54:13 INFO TaskSchedulerImpl: Adding task set 13.0 with 16 tasks resource profile 0
+24/11/08 07:54:13 INFO TaskSetManager: Starting task 0.0 in stage 13.0 (TID 110) (172.31.9.98, executor 1, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:13 INFO TaskSetManager: Starting task 1.0 in stage 13.0 (TID 111) (172.31.15.133, executor 0, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:13 INFO TaskSetManager: Starting task 2.0 in stage 13.0 (TID 112) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:13 INFO TaskSetManager: Starting task 3.0 in stage 13.0 (TID 113) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:13 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:54:13 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:54:13 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 8 to 172.31.15.133:46032
+24/11/08 07:54:13 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 8 to 172.31.9.98:36700
+24/11/08 07:54:14 INFO TaskSetManager: Starting task 4.0 in stage 13.0 (TID 114) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:14 INFO TaskSetManager: Finished task 2.0 in stage 13.0 (TID 112) in 1155 ms on 172.31.9.98 (executor 1) (1/16)
+24/11/08 07:54:14 INFO TaskSetManager: Starting task 5.0 in stage 13.0 (TID 115) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:14 INFO TaskSetManager: Finished task 3.0 in stage 13.0 (TID 113) in 1322 ms on 172.31.15.133 (executor 0) (2/16)
+24/11/08 07:54:15 INFO TaskSetManager: Starting task 6.0 in stage 13.0 (TID 116) (172.31.9.98, executor 1, partition 6, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:15 INFO TaskSetManager: Finished task 4.0 in stage 13.0 (TID 114) in 1151 ms on 172.31.9.98 (executor 1) (3/16)
+24/11/08 07:54:15 INFO TaskSetManager: Starting task 7.0 in stage 13.0 (TID 117) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:15 INFO TaskSetManager: Finished task 5.0 in stage 13.0 (TID 115) in 1207 ms on 172.31.15.133 (executor 0) (4/16)
+24/11/08 07:54:16 INFO TaskSetManager: Starting task 8.0 in stage 13.0 (TID 118) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:16 INFO TaskSetManager: Finished task 6.0 in stage 13.0 (TID 116) in 1246 ms on 172.31.9.98 (executor 1) (5/16)
+24/11/08 07:54:16 INFO TaskSetManager: Starting task 9.0 in stage 13.0 (TID 119) (172.31.15.133, executor 0, partition 9, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:16 INFO TaskSetManager: Finished task 7.0 in stage 13.0 (TID 117) in 1240 ms on 172.31.15.133 (executor 0) (6/16)
+24/11/08 07:54:17 INFO TaskSetManager: Starting task 10.0 in stage 13.0 (TID 120) (172.31.9.98, executor 1, partition 10, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:17 INFO TaskSetManager: Finished task 8.0 in stage 13.0 (TID 118) in 1037 ms on 172.31.9.98 (executor 1) (7/16)
+24/11/08 07:54:18 INFO TaskSetManager: Starting task 11.0 in stage 13.0 (TID 121) (172.31.15.133, executor 0, partition 11, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:18 INFO TaskSetManager: Finished task 9.0 in stage 13.0 (TID 119) in 1271 ms on 172.31.15.133 (executor 0) (8/16)
+24/11/08 07:54:18 INFO TaskSetManager: Starting task 12.0 in stage 13.0 (TID 122) (172.31.9.98, executor 1, partition 12, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:18 INFO TaskSetManager: Finished task 10.0 in stage 13.0 (TID 120) in 1250 ms on 172.31.9.98 (executor 1) (9/16)
+24/11/08 07:54:19 INFO TaskSetManager: Starting task 13.0 in stage 13.0 (TID 123) (172.31.15.133, executor 0, partition 13, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:19 INFO TaskSetManager: Finished task 11.0 in stage 13.0 (TID 121) in 1133 ms on 172.31.15.133 (executor 0) (10/16)
+24/11/08 07:54:20 INFO TaskSetManager: Starting task 14.0 in stage 13.0 (TID 124) (172.31.9.98, executor 1, partition 14, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:20 INFO TaskSetManager: Finished task 12.0 in stage 13.0 (TID 122) in 1141 ms on 172.31.9.98 (executor 1) (11/16)
+24/11/08 07:54:20 INFO TaskSetManager: Starting task 15.0 in stage 13.0 (TID 125) (172.31.15.133, executor 0, partition 15, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:20 INFO TaskSetManager: Finished task 13.0 in stage 13.0 (TID 123) in 1226 ms on 172.31.15.133 (executor 0) (12/16)
+24/11/08 07:54:21 INFO TaskSetManager: Finished task 14.0 in stage 13.0 (TID 124) in 1479 ms on 172.31.9.98 (executor 1) (13/16)
+24/11/08 07:54:21 INFO TaskSetManager: Finished task 15.0 in stage 13.0 (TID 125) in 1233 ms on 172.31.15.133 (executor 0) (14/16)
+24/11/08 07:54:26 INFO TaskSetManager: Finished task 1.0 in stage 13.0 (TID 111) in 13201 ms on 172.31.15.133 (executor 0) (15/16)
+24/11/08 07:54:27 INFO TaskSetManager: Finished task 0.0 in stage 13.0 (TID 110) in 13973 ms on 172.31.9.98 (executor 1) (16/16)
+24/11/08 07:54:27 INFO TaskSchedulerImpl: Removed TaskSet 13.0, whose tasks have all completed, from pool 
+24/11/08 07:54:27 INFO DAGScheduler: ShuffleMapStage 13 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 13.982 s
+24/11/08 07:54:27 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:54:27 INFO DAGScheduler: running: Set()
+24/11/08 07:54:27 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ResultStage 21, ShuffleMapStage 14)
+24/11/08 07:54:27 INFO DAGScheduler: failed: Set()
+24/11/08 07:54:27 INFO DAGScheduler: Submitting ShuffleMapStage 14 (PairwiseRDD[81] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:54:27 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 14.8 KiB, free 2004.0 MiB)
+24/11/08 07:54:27 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2004.0 MiB)
+24/11/08 07:54:27 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:54:27 INFO SparkContext: Created broadcast 15 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:54:27 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 14 (PairwiseRDD[81] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:54:27 INFO TaskSchedulerImpl: Adding task set 14.0 with 16 tasks resource profile 0
+24/11/08 07:54:27 INFO TaskSetManager: Starting task 1.0 in stage 14.0 (TID 126) (172.31.15.133, executor 0, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:27 INFO TaskSetManager: Starting task 0.0 in stage 14.0 (TID 127) (172.31.9.98, executor 1, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:27 INFO TaskSetManager: Starting task 3.0 in stage 14.0 (TID 128) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:27 INFO TaskSetManager: Starting task 2.0 in stage 14.0 (TID 129) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:27 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:54:27 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:54:27 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 7 to 172.31.9.98:36700
+24/11/08 07:54:27 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 7 to 172.31.15.133:46032
+24/11/08 07:54:29 INFO TaskSetManager: Starting task 4.0 in stage 14.0 (TID 130) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:29 INFO TaskSetManager: Finished task 2.0 in stage 14.0 (TID 129) in 2124 ms on 172.31.9.98 (executor 1) (1/16)
+24/11/08 07:54:29 INFO TaskSetManager: Starting task 6.0 in stage 14.0 (TID 131) (172.31.9.98, executor 1, partition 6, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:29 INFO TaskSetManager: Finished task 0.0 in stage 14.0 (TID 127) in 2217 ms on 172.31.9.98 (executor 1) (2/16)
+24/11/08 07:54:29 INFO TaskSetManager: Starting task 5.0 in stage 14.0 (TID 132) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:29 INFO TaskSetManager: Finished task 1.0 in stage 14.0 (TID 126) in 2631 ms on 172.31.15.133 (executor 0) (3/16)
+24/11/08 07:54:29 INFO TaskSetManager: Starting task 7.0 in stage 14.0 (TID 133) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:29 INFO TaskSetManager: Finished task 3.0 in stage 14.0 (TID 128) in 2664 ms on 172.31.15.133 (executor 0) (4/16)
+24/11/08 07:54:31 INFO TaskSetManager: Starting task 8.0 in stage 14.0 (TID 134) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:31 INFO TaskSetManager: Finished task 4.0 in stage 14.0 (TID 130) in 2129 ms on 172.31.9.98 (executor 1) (5/16)
+24/11/08 07:54:31 INFO TaskSetManager: Starting task 10.0 in stage 14.0 (TID 135) (172.31.9.98, executor 1, partition 10, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:31 INFO TaskSetManager: Finished task 6.0 in stage 14.0 (TID 131) in 2091 ms on 172.31.9.98 (executor 1) (6/16)
+24/11/08 07:54:31 INFO TaskSetManager: Starting task 9.0 in stage 14.0 (TID 136) (172.31.15.133, executor 0, partition 9, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:31 INFO TaskSetManager: Finished task 7.0 in stage 14.0 (TID 133) in 2223 ms on 172.31.15.133 (executor 0) (7/16)
+24/11/08 07:54:32 INFO TaskSetManager: Starting task 11.0 in stage 14.0 (TID 137) (172.31.15.133, executor 0, partition 11, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:32 INFO TaskSetManager: Finished task 5.0 in stage 14.0 (TID 132) in 2289 ms on 172.31.15.133 (executor 0) (8/16)
+24/11/08 07:54:33 INFO TaskSetManager: Starting task 12.0 in stage 14.0 (TID 138) (172.31.9.98, executor 1, partition 12, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:33 INFO TaskSetManager: Finished task 8.0 in stage 14.0 (TID 134) in 2107 ms on 172.31.9.98 (executor 1) (9/16)
+24/11/08 07:54:33 INFO TaskSetManager: Starting task 14.0 in stage 14.0 (TID 139) (172.31.9.98, executor 1, partition 14, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:33 INFO TaskSetManager: Finished task 10.0 in stage 14.0 (TID 135) in 2091 ms on 172.31.9.98 (executor 1) (10/16)
+24/11/08 07:54:34 INFO TaskSetManager: Starting task 13.0 in stage 14.0 (TID 140) (172.31.15.133, executor 0, partition 13, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:34 INFO TaskSetManager: Finished task 11.0 in stage 14.0 (TID 137) in 2129 ms on 172.31.15.133 (executor 0) (11/16)
+24/11/08 07:54:34 INFO TaskSetManager: Starting task 15.0 in stage 14.0 (TID 141) (172.31.15.133, executor 0, partition 15, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:34 INFO TaskSetManager: Finished task 9.0 in stage 14.0 (TID 136) in 2250 ms on 172.31.15.133 (executor 0) (12/16)
+24/11/08 07:54:35 INFO TaskSetManager: Finished task 12.0 in stage 14.0 (TID 138) in 2074 ms on 172.31.9.98 (executor 1) (13/16)
+24/11/08 07:54:35 INFO TaskSetManager: Finished task 14.0 in stage 14.0 (TID 139) in 2096 ms on 172.31.9.98 (executor 1) (14/16)
+24/11/08 07:54:36 INFO TaskSetManager: Finished task 13.0 in stage 14.0 (TID 140) in 2087 ms on 172.31.15.133 (executor 0) (15/16)
+24/11/08 07:54:36 INFO TaskSetManager: Finished task 15.0 in stage 14.0 (TID 141) in 2114 ms on 172.31.15.133 (executor 0) (16/16)
+24/11/08 07:54:36 INFO TaskSchedulerImpl: Removed TaskSet 14.0, whose tasks have all completed, from pool 
+24/11/08 07:54:36 INFO DAGScheduler: ShuffleMapStage 14 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 9.265 s
+24/11/08 07:54:36 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:54:36 INFO DAGScheduler: running: Set()
+24/11/08 07:54:36 INFO DAGScheduler: waiting: Set(ShuffleMapStage 15, ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ResultStage 21)
+24/11/08 07:54:36 INFO DAGScheduler: failed: Set()
+24/11/08 07:54:36 INFO DAGScheduler: Submitting ShuffleMapStage 15 (PairwiseRDD[88] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:54:36 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 20.7 KiB, free 2004.0 MiB)
+24/11/08 07:54:36 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2004.0 MiB)
+24/11/08 07:54:36 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:54:36 INFO SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:54:36 INFO DAGScheduler: Submitting 18 missing tasks from ShuffleMapStage 15 (PairwiseRDD[88] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:54:36 INFO TaskSchedulerImpl: Adding task set 15.0 with 18 tasks resource profile 0
+24/11/08 07:54:36 INFO TaskSetManager: Starting task 0.0 in stage 15.0 (TID 142) (172.31.9.98, executor 1, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:36 INFO TaskSetManager: Starting task 1.0 in stage 15.0 (TID 143) (172.31.15.133, executor 0, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:36 INFO TaskSetManager: Starting task 2.0 in stage 15.0 (TID 144) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:36 INFO TaskSetManager: Starting task 3.0 in stage 15.0 (TID 145) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:36 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:54:36 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:54:36 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 6 to 172.31.9.98:36700
+24/11/08 07:54:36 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 6 to 172.31.15.133:46032
+24/11/08 07:54:37 INFO TaskSetManager: Starting task 4.0 in stage 15.0 (TID 146) (172.31.15.133, executor 0, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:37 INFO TaskSetManager: Finished task 3.0 in stage 15.0 (TID 145) in 901 ms on 172.31.15.133 (executor 0) (1/18)
+24/11/08 07:54:37 INFO TaskSetManager: Starting task 5.0 in stage 15.0 (TID 147) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:37 INFO TaskSetManager: Finished task 2.0 in stage 15.0 (TID 144) in 1449 ms on 172.31.9.98 (executor 1) (2/18)
+24/11/08 07:54:38 INFO TaskSetManager: Starting task 6.0 in stage 15.0 (TID 148) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:38 INFO TaskSetManager: Finished task 4.0 in stage 15.0 (TID 146) in 980 ms on 172.31.15.133 (executor 0) (3/18)
+24/11/08 07:54:38 INFO TaskSetManager: Starting task 7.0 in stage 15.0 (TID 149) (172.31.9.98, executor 1, partition 7, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:38 INFO TaskSetManager: Finished task 5.0 in stage 15.0 (TID 147) in 1132 ms on 172.31.9.98 (executor 1) (4/18)
+24/11/08 07:54:39 INFO TaskSetManager: Starting task 8.0 in stage 15.0 (TID 150) (172.31.15.133, executor 0, partition 8, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:39 INFO TaskSetManager: Finished task 6.0 in stage 15.0 (TID 148) in 1100 ms on 172.31.15.133 (executor 0) (5/18)
+24/11/08 07:54:40 INFO TaskSetManager: Starting task 9.0 in stage 15.0 (TID 151) (172.31.9.98, executor 1, partition 9, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:40 INFO TaskSetManager: Finished task 7.0 in stage 15.0 (TID 149) in 1233 ms on 172.31.9.98 (executor 1) (6/18)
+24/11/08 07:54:40 INFO TaskSetManager: Starting task 10.0 in stage 15.0 (TID 152) (172.31.15.133, executor 0, partition 10, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:40 INFO TaskSetManager: Finished task 8.0 in stage 15.0 (TID 150) in 1224 ms on 172.31.15.133 (executor 0) (7/18)
+24/11/08 07:54:41 INFO TaskSetManager: Starting task 11.0 in stage 15.0 (TID 153) (172.31.9.98, executor 1, partition 11, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:41 INFO TaskSetManager: Finished task 9.0 in stage 15.0 (TID 151) in 1160 ms on 172.31.9.98 (executor 1) (8/18)
+24/11/08 07:54:41 INFO TaskSetManager: Starting task 12.0 in stage 15.0 (TID 154) (172.31.15.133, executor 0, partition 12, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:41 INFO TaskSetManager: Finished task 10.0 in stage 15.0 (TID 152) in 1023 ms on 172.31.15.133 (executor 0) (9/18)
+24/11/08 07:54:42 INFO TaskSetManager: Starting task 13.0 in stage 15.0 (TID 155) (172.31.9.98, executor 1, partition 13, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:42 INFO TaskSetManager: Finished task 11.0 in stage 15.0 (TID 153) in 1260 ms on 172.31.9.98 (executor 1) (10/18)
+24/11/08 07:54:42 INFO TaskSetManager: Starting task 14.0 in stage 15.0 (TID 156) (172.31.15.133, executor 0, partition 14, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:42 INFO TaskSetManager: Finished task 12.0 in stage 15.0 (TID 154) in 1232 ms on 172.31.15.133 (executor 0) (11/18)
+24/11/08 07:54:43 INFO TaskSetManager: Starting task 15.0 in stage 15.0 (TID 157) (172.31.9.98, executor 1, partition 15, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:43 INFO TaskSetManager: Finished task 13.0 in stage 15.0 (TID 155) in 1114 ms on 172.31.9.98 (executor 1) (12/18)
+24/11/08 07:54:44 INFO TaskSetManager: Starting task 16.0 in stage 15.0 (TID 158) (172.31.15.133, executor 0, partition 16, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:44 INFO TaskSetManager: Finished task 14.0 in stage 15.0 (TID 156) in 1233 ms on 172.31.15.133 (executor 0) (13/18)
+24/11/08 07:54:44 INFO TaskSetManager: Finished task 15.0 in stage 15.0 (TID 157) in 1191 ms on 172.31.9.98 (executor 1) (14/18)
+24/11/08 07:54:44 INFO TaskSetManager: Starting task 17.0 in stage 15.0 (TID 159) (172.31.9.98, executor 1, partition 17, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:54:45 INFO TaskSetManager: Finished task 16.0 in stage 15.0 (TID 158) in 1185 ms on 172.31.15.133 (executor 0) (15/18)
+24/11/08 07:54:45 INFO TaskSetManager: Finished task 17.0 in stage 15.0 (TID 159) in 1052 ms on 172.31.9.98 (executor 1) (16/18)
+24/11/08 07:54:49 INFO TaskSetManager: Finished task 1.0 in stage 15.0 (TID 143) in 13348 ms on 172.31.15.133 (executor 0) (17/18)
+24/11/08 07:54:50 INFO TaskSetManager: Finished task 0.0 in stage 15.0 (TID 142) in 14206 ms on 172.31.9.98 (executor 1) (18/18)
+24/11/08 07:54:50 INFO TaskSchedulerImpl: Removed TaskSet 15.0, whose tasks have all completed, from pool 
+24/11/08 07:54:50 INFO DAGScheduler: ShuffleMapStage 15 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 14.217 s
+24/11/08 07:54:50 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:54:50 INFO DAGScheduler: running: Set()
+24/11/08 07:54:50 INFO DAGScheduler: waiting: Set(ShuffleMapStage 16, ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ResultStage 21)
+24/11/08 07:54:50 INFO DAGScheduler: failed: Set()
+24/11/08 07:54:50 INFO DAGScheduler: Submitting ShuffleMapStage 16 (PairwiseRDD[92] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:54:50 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 14.8 KiB, free 2004.0 MiB)
+24/11/08 07:54:50 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2004.0 MiB)
+24/11/08 07:54:50 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:54:50 INFO SparkContext: Created broadcast 17 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:54:50 INFO DAGScheduler: Submitting 18 missing tasks from ShuffleMapStage 16 (PairwiseRDD[92] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:54:50 INFO TaskSchedulerImpl: Adding task set 16.0 with 18 tasks resource profile 0
+24/11/08 07:54:50 INFO TaskSetManager: Starting task 0.0 in stage 16.0 (TID 160) (172.31.15.133, executor 0, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:50 INFO TaskSetManager: Starting task 1.0 in stage 16.0 (TID 161) (172.31.9.98, executor 1, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:50 INFO TaskSetManager: Starting task 2.0 in stage 16.0 (TID 162) (172.31.15.133, executor 0, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:50 INFO TaskSetManager: Starting task 3.0 in stage 16.0 (TID 163) (172.31.9.98, executor 1, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:50 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:54:50 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:54:50 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 5 to 172.31.9.98:36700
+24/11/08 07:54:50 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 5 to 172.31.15.133:46032
+24/11/08 07:54:52 INFO TaskSetManager: Starting task 4.0 in stage 16.0 (TID 164) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:52 INFO TaskSetManager: Finished task 3.0 in stage 16.0 (TID 163) in 2050 ms on 172.31.9.98 (executor 1) (1/18)
+24/11/08 07:54:52 INFO TaskSetManager: Starting task 5.0 in stage 16.0 (TID 165) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:52 INFO TaskSetManager: Finished task 1.0 in stage 16.0 (TID 161) in 2134 ms on 172.31.9.98 (executor 1) (2/18)
+24/11/08 07:54:52 INFO TaskSetManager: Starting task 6.0 in stage 16.0 (TID 166) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:52 INFO TaskSetManager: Finished task 0.0 in stage 16.0 (TID 160) in 2218 ms on 172.31.15.133 (executor 0) (3/18)
+24/11/08 07:54:52 INFO TaskSetManager: Starting task 7.0 in stage 16.0 (TID 167) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:52 INFO TaskSetManager: Finished task 2.0 in stage 16.0 (TID 162) in 2364 ms on 172.31.15.133 (executor 0) (4/18)
+24/11/08 07:54:54 INFO TaskSetManager: Starting task 8.0 in stage 16.0 (TID 168) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:54 INFO TaskSetManager: Finished task 4.0 in stage 16.0 (TID 164) in 1939 ms on 172.31.9.98 (executor 1) (5/18)
+24/11/08 07:54:54 INFO TaskSetManager: Starting task 9.0 in stage 16.0 (TID 169) (172.31.9.98, executor 1, partition 9, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:54 INFO TaskSetManager: Finished task 5.0 in stage 16.0 (TID 165) in 2060 ms on 172.31.9.98 (executor 1) (6/18)
+24/11/08 07:54:54 INFO TaskSetManager: Starting task 10.0 in stage 16.0 (TID 170) (172.31.15.133, executor 0, partition 10, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:54 INFO TaskSetManager: Finished task 6.0 in stage 16.0 (TID 166) in 2081 ms on 172.31.15.133 (executor 0) (7/18)
+24/11/08 07:54:54 INFO TaskSetManager: Starting task 11.0 in stage 16.0 (TID 171) (172.31.15.133, executor 0, partition 11, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:54 INFO TaskSetManager: Finished task 7.0 in stage 16.0 (TID 167) in 2033 ms on 172.31.15.133 (executor 0) (8/18)
+24/11/08 07:54:56 INFO TaskSetManager: Starting task 12.0 in stage 16.0 (TID 172) (172.31.9.98, executor 1, partition 12, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:56 INFO TaskSetManager: Finished task 8.0 in stage 16.0 (TID 168) in 1922 ms on 172.31.9.98 (executor 1) (9/18)
+24/11/08 07:54:56 INFO TaskSetManager: Starting task 13.0 in stage 16.0 (TID 173) (172.31.9.98, executor 1, partition 13, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:56 INFO TaskSetManager: Finished task 9.0 in stage 16.0 (TID 169) in 2056 ms on 172.31.9.98 (executor 1) (10/18)
+24/11/08 07:54:56 INFO TaskSetManager: Starting task 14.0 in stage 16.0 (TID 174) (172.31.15.133, executor 0, partition 14, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:56 INFO TaskSetManager: Finished task 11.0 in stage 16.0 (TID 171) in 1980 ms on 172.31.15.133 (executor 0) (11/18)
+24/11/08 07:54:56 INFO TaskSetManager: Finished task 10.0 in stage 16.0 (TID 170) in 2093 ms on 172.31.15.133 (executor 0) (12/18)
+24/11/08 07:54:56 INFO TaskSetManager: Starting task 15.0 in stage 16.0 (TID 175) (172.31.15.133, executor 0, partition 15, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:58 INFO TaskSetManager: Starting task 16.0 in stage 16.0 (TID 176) (172.31.9.98, executor 1, partition 16, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:58 INFO TaskSetManager: Finished task 12.0 in stage 16.0 (TID 172) in 1949 ms on 172.31.9.98 (executor 1) (13/18)
+24/11/08 07:54:58 INFO TaskSetManager: Starting task 17.0 in stage 16.0 (TID 177) (172.31.9.98, executor 1, partition 17, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:54:58 INFO TaskSetManager: Finished task 13.0 in stage 16.0 (TID 173) in 2009 ms on 172.31.9.98 (executor 1) (14/18)
+24/11/08 07:54:58 INFO TaskSetManager: Finished task 15.0 in stage 16.0 (TID 175) in 1951 ms on 172.31.15.133 (executor 0) (15/18)
+24/11/08 07:54:58 INFO TaskSetManager: Finished task 14.0 in stage 16.0 (TID 174) in 2023 ms on 172.31.15.133 (executor 0) (16/18)
+24/11/08 07:55:00 INFO TaskSetManager: Finished task 16.0 in stage 16.0 (TID 176) in 1920 ms on 172.31.9.98 (executor 1) (17/18)
+24/11/08 07:55:00 INFO TaskSetManager: Finished task 17.0 in stage 16.0 (TID 177) in 1795 ms on 172.31.9.98 (executor 1) (18/18)
+24/11/08 07:55:00 INFO TaskSchedulerImpl: Removed TaskSet 16.0, whose tasks have all completed, from pool 
+24/11/08 07:55:00 INFO DAGScheduler: ShuffleMapStage 16 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 10.055 s
+24/11/08 07:55:00 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:55:00 INFO DAGScheduler: running: Set()
+24/11/08 07:55:00 INFO DAGScheduler: waiting: Set(ShuffleMapStage 17, ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ResultStage 21)
+24/11/08 07:55:00 INFO DAGScheduler: failed: Set()
+24/11/08 07:55:00 INFO DAGScheduler: Submitting ShuffleMapStage 17 (PairwiseRDD[99] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:55:00 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 20.7 KiB, free 2004.0 MiB)
+24/11/08 07:55:00 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2004.0 MiB)
+24/11/08 07:55:00 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:55:00 INFO SparkContext: Created broadcast 18 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:55:00 INFO DAGScheduler: Submitting 20 missing tasks from ShuffleMapStage 17 (PairwiseRDD[99] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:55:00 INFO TaskSchedulerImpl: Adding task set 17.0 with 20 tasks resource profile 0
+24/11/08 07:55:00 INFO TaskSetManager: Starting task 0.0 in stage 17.0 (TID 178) (172.31.15.133, executor 0, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:00 INFO TaskSetManager: Starting task 1.0 in stage 17.0 (TID 179) (172.31.9.98, executor 1, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:00 INFO TaskSetManager: Starting task 2.0 in stage 17.0 (TID 180) (172.31.15.133, executor 0, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:00 INFO TaskSetManager: Starting task 3.0 in stage 17.0 (TID 181) (172.31.9.98, executor 1, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:00 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:55:00 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 4 to 172.31.15.133:46032
+24/11/08 07:55:00 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:00 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 4 to 172.31.9.98:36700
+24/11/08 07:55:01 INFO TaskSetManager: Starting task 4.0 in stage 17.0 (TID 182) (172.31.15.133, executor 0, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:01 INFO TaskSetManager: Finished task 2.0 in stage 17.0 (TID 180) in 940 ms on 172.31.15.133 (executor 0) (1/20)
+24/11/08 07:55:01 INFO TaskSetManager: Starting task 5.0 in stage 17.0 (TID 183) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:01 INFO TaskSetManager: Finished task 3.0 in stage 17.0 (TID 181) in 1143 ms on 172.31.9.98 (executor 1) (2/20)
+24/11/08 07:55:02 INFO TaskSetManager: Starting task 6.0 in stage 17.0 (TID 184) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:02 INFO TaskSetManager: Finished task 4.0 in stage 17.0 (TID 182) in 962 ms on 172.31.15.133 (executor 0) (3/20)
+24/11/08 07:55:02 INFO TaskSetManager: Starting task 7.0 in stage 17.0 (TID 185) (172.31.9.98, executor 1, partition 7, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:02 INFO TaskSetManager: Finished task 5.0 in stage 17.0 (TID 183) in 1057 ms on 172.31.9.98 (executor 1) (4/20)
+24/11/08 07:55:03 INFO TaskSetManager: Starting task 8.0 in stage 17.0 (TID 186) (172.31.15.133, executor 0, partition 8, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:03 INFO TaskSetManager: Finished task 6.0 in stage 17.0 (TID 184) in 1077 ms on 172.31.15.133 (executor 0) (5/20)
+24/11/08 07:55:03 INFO TaskSetManager: Starting task 9.0 in stage 17.0 (TID 187) (172.31.9.98, executor 1, partition 9, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:04 INFO TaskSetManager: Finished task 7.0 in stage 17.0 (TID 185) in 1170 ms on 172.31.9.98 (executor 1) (6/20)
+24/11/08 07:55:04 INFO TaskSetManager: Starting task 10.0 in stage 17.0 (TID 188) (172.31.15.133, executor 0, partition 10, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:04 INFO TaskSetManager: Finished task 8.0 in stage 17.0 (TID 186) in 1015 ms on 172.31.15.133 (executor 0) (7/20)
+24/11/08 07:55:05 INFO TaskSetManager: Starting task 11.0 in stage 17.0 (TID 189) (172.31.9.98, executor 1, partition 11, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:05 INFO TaskSetManager: Finished task 9.0 in stage 17.0 (TID 187) in 1218 ms on 172.31.9.98 (executor 1) (8/20)
+24/11/08 07:55:05 INFO TaskSetManager: Starting task 12.0 in stage 17.0 (TID 190) (172.31.15.133, executor 0, partition 12, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:05 INFO TaskSetManager: Finished task 10.0 in stage 17.0 (TID 188) in 1207 ms on 172.31.15.133 (executor 0) (9/20)
+24/11/08 07:55:06 INFO TaskSetManager: Starting task 13.0 in stage 17.0 (TID 191) (172.31.9.98, executor 1, partition 13, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:06 INFO TaskSetManager: Finished task 11.0 in stage 17.0 (TID 189) in 983 ms on 172.31.9.98 (executor 1) (10/20)
+24/11/08 07:55:06 INFO TaskSetManager: Starting task 14.0 in stage 17.0 (TID 192) (172.31.15.133, executor 0, partition 14, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:06 INFO TaskSetManager: Finished task 12.0 in stage 17.0 (TID 190) in 1147 ms on 172.31.15.133 (executor 0) (11/20)
+24/11/08 07:55:07 INFO TaskSetManager: Starting task 15.0 in stage 17.0 (TID 193) (172.31.9.98, executor 1, partition 15, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:07 INFO TaskSetManager: Finished task 13.0 in stage 17.0 (TID 191) in 1017 ms on 172.31.9.98 (executor 1) (12/20)
+24/11/08 07:55:07 INFO TaskSetManager: Starting task 16.0 in stage 17.0 (TID 194) (172.31.15.133, executor 0, partition 16, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:07 INFO TaskSetManager: Finished task 14.0 in stage 17.0 (TID 192) in 941 ms on 172.31.15.133 (executor 0) (13/20)
+24/11/08 07:55:08 INFO TaskSetManager: Starting task 17.0 in stage 17.0 (TID 195) (172.31.9.98, executor 1, partition 17, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:08 INFO TaskSetManager: Finished task 15.0 in stage 17.0 (TID 193) in 1070 ms on 172.31.9.98 (executor 1) (14/20)
+24/11/08 07:55:09 INFO TaskSetManager: Starting task 18.0 in stage 17.0 (TID 196) (172.31.15.133, executor 0, partition 18, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:09 INFO TaskSetManager: Finished task 16.0 in stage 17.0 (TID 194) in 1184 ms on 172.31.15.133 (executor 0) (15/20)
+24/11/08 07:55:09 INFO TaskSetManager: Starting task 19.0 in stage 17.0 (TID 197) (172.31.9.98, executor 1, partition 19, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:09 INFO TaskSetManager: Finished task 17.0 in stage 17.0 (TID 195) in 1207 ms on 172.31.9.98 (executor 1) (16/20)
+24/11/08 07:55:10 INFO TaskSetManager: Finished task 18.0 in stage 17.0 (TID 196) in 1153 ms on 172.31.15.133 (executor 0) (17/20)
+24/11/08 07:55:10 INFO TaskSetManager: Finished task 19.0 in stage 17.0 (TID 197) in 1134 ms on 172.31.9.98 (executor 1) (18/20)
+24/11/08 07:55:14 INFO TaskSetManager: Finished task 1.0 in stage 17.0 (TID 179) in 13405 ms on 172.31.9.98 (executor 1) (19/20)
+24/11/08 07:55:14 INFO TaskSetManager: Finished task 0.0 in stage 17.0 (TID 178) in 14107 ms on 172.31.15.133 (executor 0) (20/20)
+24/11/08 07:55:14 INFO TaskSchedulerImpl: Removed TaskSet 17.0, whose tasks have all completed, from pool 
+24/11/08 07:55:14 INFO DAGScheduler: ShuffleMapStage 17 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 14.118 s
+24/11/08 07:55:14 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:55:14 INFO DAGScheduler: running: Set()
+24/11/08 07:55:14 INFO DAGScheduler: waiting: Set(ShuffleMapStage 18, ShuffleMapStage 19, ShuffleMapStage 20, ResultStage 21)
+24/11/08 07:55:14 INFO DAGScheduler: failed: Set()
+24/11/08 07:55:14 INFO DAGScheduler: Submitting ShuffleMapStage 18 (PairwiseRDD[103] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:55:14 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 14.8 KiB, free 2003.9 MiB)
+24/11/08 07:55:14 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2003.9 MiB)
+24/11/08 07:55:14 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:55:14 INFO SparkContext: Created broadcast 19 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:55:14 INFO DAGScheduler: Submitting 20 missing tasks from ShuffleMapStage 18 (PairwiseRDD[103] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:55:14 INFO TaskSchedulerImpl: Adding task set 18.0 with 20 tasks resource profile 0
+24/11/08 07:55:14 INFO TaskSetManager: Starting task 1.0 in stage 18.0 (TID 198) (172.31.9.98, executor 1, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:14 INFO TaskSetManager: Starting task 0.0 in stage 18.0 (TID 199) (172.31.15.133, executor 0, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:14 INFO TaskSetManager: Starting task 3.0 in stage 18.0 (TID 200) (172.31.9.98, executor 1, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:14 INFO TaskSetManager: Starting task 2.0 in stage 18.0 (TID 201) (172.31.15.133, executor 0, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:14 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:14 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:14 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 3 to 172.31.15.133:46032
+24/11/08 07:55:14 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 3 to 172.31.9.98:36700
+24/11/08 07:55:16 INFO TaskSetManager: Starting task 5.0 in stage 18.0 (TID 202) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:16 INFO TaskSetManager: Finished task 1.0 in stage 18.0 (TID 198) in 1830 ms on 172.31.9.98 (executor 1) (1/20)
+24/11/08 07:55:16 INFO TaskSetManager: Starting task 7.0 in stage 18.0 (TID 203) (172.31.9.98, executor 1, partition 7, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:16 INFO TaskSetManager: Finished task 3.0 in stage 18.0 (TID 200) in 1868 ms on 172.31.9.98 (executor 1) (2/20)
+24/11/08 07:55:16 INFO TaskSetManager: Starting task 4.0 in stage 18.0 (TID 204) (172.31.15.133, executor 0, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:16 INFO TaskSetManager: Finished task 2.0 in stage 18.0 (TID 201) in 2120 ms on 172.31.15.133 (executor 0) (3/20)
+24/11/08 07:55:16 INFO TaskSetManager: Starting task 6.0 in stage 18.0 (TID 205) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:16 INFO TaskSetManager: Finished task 0.0 in stage 18.0 (TID 199) in 2173 ms on 172.31.15.133 (executor 0) (4/20)
+24/11/08 07:55:18 INFO TaskSetManager: Starting task 9.0 in stage 18.0 (TID 206) (172.31.9.98, executor 1, partition 9, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:18 INFO TaskSetManager: Finished task 5.0 in stage 18.0 (TID 202) in 1860 ms on 172.31.9.98 (executor 1) (5/20)
+24/11/08 07:55:18 INFO TaskSetManager: Starting task 11.0 in stage 18.0 (TID 207) (172.31.9.98, executor 1, partition 11, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:18 INFO TaskSetManager: Finished task 7.0 in stage 18.0 (TID 203) in 1827 ms on 172.31.9.98 (executor 1) (6/20)
+24/11/08 07:55:18 INFO TaskSetManager: Starting task 8.0 in stage 18.0 (TID 208) (172.31.15.133, executor 0, partition 8, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:18 INFO TaskSetManager: Finished task 6.0 in stage 18.0 (TID 205) in 1744 ms on 172.31.15.133 (executor 0) (7/20)
+24/11/08 07:55:18 INFO TaskSetManager: Starting task 10.0 in stage 18.0 (TID 209) (172.31.15.133, executor 0, partition 10, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:18 INFO TaskSetManager: Finished task 4.0 in stage 18.0 (TID 204) in 1828 ms on 172.31.15.133 (executor 0) (8/20)
+24/11/08 07:55:20 INFO TaskSetManager: Starting task 13.0 in stage 18.0 (TID 210) (172.31.9.98, executor 1, partition 13, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:20 INFO TaskSetManager: Finished task 11.0 in stage 18.0 (TID 207) in 1789 ms on 172.31.9.98 (executor 1) (9/20)
+24/11/08 07:55:20 INFO TaskSetManager: Starting task 15.0 in stage 18.0 (TID 211) (172.31.9.98, executor 1, partition 15, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:20 INFO TaskSetManager: Finished task 9.0 in stage 18.0 (TID 206) in 1831 ms on 172.31.9.98 (executor 1) (10/20)
+24/11/08 07:55:20 INFO TaskSetManager: Starting task 12.0 in stage 18.0 (TID 212) (172.31.15.133, executor 0, partition 12, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:20 INFO TaskSetManager: Finished task 8.0 in stage 18.0 (TID 208) in 1809 ms on 172.31.15.133 (executor 0) (11/20)
+24/11/08 07:55:20 INFO TaskSetManager: Starting task 14.0 in stage 18.0 (TID 213) (172.31.15.133, executor 0, partition 14, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:20 INFO TaskSetManager: Finished task 10.0 in stage 18.0 (TID 209) in 1824 ms on 172.31.15.133 (executor 0) (12/20)
+24/11/08 07:55:22 INFO TaskSetManager: Starting task 17.0 in stage 18.0 (TID 214) (172.31.9.98, executor 1, partition 17, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:22 INFO TaskSetManager: Finished task 13.0 in stage 18.0 (TID 210) in 1832 ms on 172.31.9.98 (executor 1) (13/20)
+24/11/08 07:55:22 INFO TaskSetManager: Starting task 19.0 in stage 18.0 (TID 215) (172.31.9.98, executor 1, partition 19, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:22 INFO TaskSetManager: Finished task 15.0 in stage 18.0 (TID 211) in 1815 ms on 172.31.9.98 (executor 1) (14/20)
+24/11/08 07:55:22 INFO TaskSetManager: Starting task 16.0 in stage 18.0 (TID 216) (172.31.15.133, executor 0, partition 16, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:22 INFO TaskSetManager: Finished task 12.0 in stage 18.0 (TID 212) in 1764 ms on 172.31.15.133 (executor 0) (15/20)
+24/11/08 07:55:22 INFO TaskSetManager: Starting task 18.0 in stage 18.0 (TID 217) (172.31.15.133, executor 0, partition 18, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:22 INFO TaskSetManager: Finished task 14.0 in stage 18.0 (TID 213) in 1813 ms on 172.31.15.133 (executor 0) (16/20)
+24/11/08 07:55:23 INFO TaskSetManager: Finished task 17.0 in stage 18.0 (TID 214) in 1786 ms on 172.31.9.98 (executor 1) (17/20)
+24/11/08 07:55:23 INFO TaskSetManager: Finished task 19.0 in stage 18.0 (TID 215) in 1790 ms on 172.31.9.98 (executor 1) (18/20)
+24/11/08 07:55:23 INFO TaskSetManager: Finished task 16.0 in stage 18.0 (TID 216) in 1719 ms on 172.31.15.133 (executor 0) (19/20)
+24/11/08 07:55:24 INFO TaskSetManager: Finished task 18.0 in stage 18.0 (TID 217) in 1730 ms on 172.31.15.133 (executor 0) (20/20)
+24/11/08 07:55:24 INFO TaskSchedulerImpl: Removed TaskSet 18.0, whose tasks have all completed, from pool 
+24/11/08 07:55:24 INFO DAGScheduler: ShuffleMapStage 18 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 9.315 s
+24/11/08 07:55:24 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:55:24 INFO DAGScheduler: running: Set()
+24/11/08 07:55:24 INFO DAGScheduler: waiting: Set(ShuffleMapStage 19, ShuffleMapStage 20, ResultStage 21)
+24/11/08 07:55:24 INFO DAGScheduler: failed: Set()
+24/11/08 07:55:24 INFO DAGScheduler: Submitting ShuffleMapStage 19 (PairwiseRDD[110] at join at /home/ubuntu/page_rank_rdd_v2.py:24), which has no missing parents
+24/11/08 07:55:24 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 20.7 KiB, free 2003.9 MiB)
+24/11/08 07:55:24 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 2003.9 MiB)
+24/11/08 07:55:24 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:55:24 INFO SparkContext: Created broadcast 20 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:55:24 INFO DAGScheduler: Submitting 22 missing tasks from ShuffleMapStage 19 (PairwiseRDD[110] at join at /home/ubuntu/page_rank_rdd_v2.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:55:24 INFO TaskSchedulerImpl: Adding task set 19.0 with 22 tasks resource profile 0
+24/11/08 07:55:24 INFO TaskSetManager: Starting task 0.0 in stage 19.0 (TID 218) (172.31.9.98, executor 1, partition 0, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:24 INFO TaskSetManager: Starting task 1.0 in stage 19.0 (TID 219) (172.31.15.133, executor 0, partition 1, PROCESS_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:24 INFO TaskSetManager: Starting task 2.0 in stage 19.0 (TID 220) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:24 INFO TaskSetManager: Starting task 3.0 in stage 19.0 (TID 221) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:24 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on 172.31.15.133:35213 (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:24 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on 172.31.9.98:33869 (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:24 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 172.31.15.133:46032
+24/11/08 07:55:24 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 172.31.9.98:36700
+24/11/08 07:55:24 INFO TaskSetManager: Starting task 4.0 in stage 19.0 (TID 222) (172.31.15.133, executor 0, partition 4, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:24 INFO TaskSetManager: Finished task 3.0 in stage 19.0 (TID 221) in 877 ms on 172.31.15.133 (executor 0) (1/22)
+24/11/08 07:55:25 INFO TaskSetManager: Starting task 5.0 in stage 19.0 (TID 223) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:25 INFO TaskSetManager: Finished task 2.0 in stage 19.0 (TID 220) in 1057 ms on 172.31.9.98 (executor 1) (2/22)
+24/11/08 07:55:25 INFO TaskSetManager: Starting task 6.0 in stage 19.0 (TID 224) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:25 INFO TaskSetManager: Finished task 4.0 in stage 19.0 (TID 222) in 875 ms on 172.31.15.133 (executor 0) (3/22)
+24/11/08 07:55:26 INFO TaskSetManager: Starting task 7.0 in stage 19.0 (TID 225) (172.31.9.98, executor 1, partition 7, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:26 INFO TaskSetManager: Finished task 5.0 in stage 19.0 (TID 223) in 955 ms on 172.31.9.98 (executor 1) (4/22)
+24/11/08 07:55:26 INFO TaskSetManager: Starting task 8.0 in stage 19.0 (TID 226) (172.31.15.133, executor 0, partition 8, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:26 INFO TaskSetManager: Finished task 6.0 in stage 19.0 (TID 224) in 934 ms on 172.31.15.133 (executor 0) (5/22)
+24/11/08 07:55:27 INFO TaskSetManager: Starting task 9.0 in stage 19.0 (TID 227) (172.31.9.98, executor 1, partition 9, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:27 INFO TaskSetManager: Finished task 7.0 in stage 19.0 (TID 225) in 1015 ms on 172.31.9.98 (executor 1) (6/22)
+24/11/08 07:55:27 INFO TaskSetManager: Starting task 10.0 in stage 19.0 (TID 228) (172.31.15.133, executor 0, partition 10, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:27 INFO TaskSetManager: Finished task 8.0 in stage 19.0 (TID 226) in 1088 ms on 172.31.15.133 (executor 0) (7/22)
+24/11/08 07:55:28 INFO TaskSetManager: Starting task 11.0 in stage 19.0 (TID 229) (172.31.9.98, executor 1, partition 11, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:28 INFO TaskSetManager: Finished task 9.0 in stage 19.0 (TID 227) in 929 ms on 172.31.9.98 (executor 1) (8/22)
+24/11/08 07:55:28 INFO TaskSetManager: Starting task 12.0 in stage 19.0 (TID 230) (172.31.15.133, executor 0, partition 12, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:28 INFO TaskSetManager: Finished task 10.0 in stage 19.0 (TID 228) in 1138 ms on 172.31.15.133 (executor 0) (9/22)
+24/11/08 07:55:28 INFO TaskSetManager: Starting task 13.0 in stage 19.0 (TID 231) (172.31.9.98, executor 1, partition 13, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:28 INFO TaskSetManager: Finished task 11.0 in stage 19.0 (TID 229) in 965 ms on 172.31.9.98 (executor 1) (10/22)
+24/11/08 07:55:30 INFO TaskSetManager: Starting task 14.0 in stage 19.0 (TID 232) (172.31.15.133, executor 0, partition 14, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:30 INFO TaskSetManager: Finished task 12.0 in stage 19.0 (TID 230) in 1042 ms on 172.31.15.133 (executor 0) (11/22)
+24/11/08 07:55:30 INFO TaskSetManager: Starting task 15.0 in stage 19.0 (TID 233) (172.31.9.98, executor 1, partition 15, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:30 INFO TaskSetManager: Finished task 13.0 in stage 19.0 (TID 231) in 1056 ms on 172.31.9.98 (executor 1) (12/22)
+24/11/08 07:55:30 INFO TaskSetManager: Starting task 16.0 in stage 19.0 (TID 234) (172.31.9.98, executor 1, partition 16, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:30 INFO TaskSetManager: Finished task 15.0 in stage 19.0 (TID 233) in 816 ms on 172.31.9.98 (executor 1) (13/22)
+24/11/08 07:55:31 INFO TaskSetManager: Starting task 17.0 in stage 19.0 (TID 235) (172.31.15.133, executor 0, partition 17, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:31 INFO TaskSetManager: Finished task 14.0 in stage 19.0 (TID 232) in 1002 ms on 172.31.15.133 (executor 0) (14/22)
+24/11/08 07:55:31 INFO TaskSetManager: Starting task 18.0 in stage 19.0 (TID 236) (172.31.9.98, executor 1, partition 18, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:31 INFO TaskSetManager: Finished task 16.0 in stage 19.0 (TID 234) in 983 ms on 172.31.9.98 (executor 1) (15/22)
+24/11/08 07:55:31 INFO TaskSetManager: Starting task 19.0 in stage 19.0 (TID 237) (172.31.15.133, executor 0, partition 19, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:31 INFO TaskSetManager: Finished task 17.0 in stage 19.0 (TID 235) in 940 ms on 172.31.15.133 (executor 0) (16/22)
+24/11/08 07:55:32 INFO TaskSetManager: Starting task 20.0 in stage 19.0 (TID 238) (172.31.9.98, executor 1, partition 20, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:32 INFO TaskSetManager: Finished task 18.0 in stage 19.0 (TID 236) in 1083 ms on 172.31.9.98 (executor 1) (17/22)
+24/11/08 07:55:32 INFO TaskSetManager: Starting task 21.0 in stage 19.0 (TID 239) (172.31.15.133, executor 0, partition 21, NODE_LOCAL, 4373 bytes) taskResourceAssignments Map()
+24/11/08 07:55:32 INFO TaskSetManager: Finished task 19.0 in stage 19.0 (TID 237) in 977 ms on 172.31.15.133 (executor 0) (18/22)
+24/11/08 07:55:33 INFO TaskSetManager: Finished task 20.0 in stage 19.0 (TID 238) in 857 ms on 172.31.9.98 (executor 1) (19/22)
+24/11/08 07:55:33 INFO TaskSetManager: Finished task 21.0 in stage 19.0 (TID 239) in 977 ms on 172.31.15.133 (executor 0) (20/22)
+24/11/08 07:55:38 INFO TaskSetManager: Finished task 1.0 in stage 19.0 (TID 219) in 13924 ms on 172.31.15.133 (executor 0) (21/22)
+24/11/08 07:55:38 INFO TaskSetManager: Finished task 0.0 in stage 19.0 (TID 218) in 14197 ms on 172.31.9.98 (executor 1) (22/22)
+24/11/08 07:55:38 INFO TaskSchedulerImpl: Removed TaskSet 19.0, whose tasks have all completed, from pool 
+24/11/08 07:55:38 INFO DAGScheduler: ShuffleMapStage 19 (join at /home/ubuntu/page_rank_rdd_v2.py:24) finished in 14.207 s
+24/11/08 07:55:38 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:55:38 INFO DAGScheduler: running: Set()
+24/11/08 07:55:38 INFO DAGScheduler: waiting: Set(ShuffleMapStage 20, ResultStage 21)
+24/11/08 07:55:38 INFO DAGScheduler: failed: Set()
+24/11/08 07:55:38 INFO DAGScheduler: Submitting ShuffleMapStage 20 (PairwiseRDD[114] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28), which has no missing parents
+24/11/08 07:55:38 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 14.8 KiB, free 2003.9 MiB)
+24/11/08 07:55:38 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 8.3 KiB, free 2003.9 MiB)
+24/11/08 07:55:38 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:55:38 INFO SparkContext: Created broadcast 21 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:55:38 INFO DAGScheduler: Submitting 22 missing tasks from ShuffleMapStage 20 (PairwiseRDD[114] at reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:55:38 INFO TaskSchedulerImpl: Adding task set 20.0 with 22 tasks resource profile 0
+24/11/08 07:55:38 INFO TaskSetManager: Starting task 1.0 in stage 20.0 (TID 240) (172.31.15.133, executor 0, partition 1, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:38 INFO TaskSetManager: Starting task 0.0 in stage 20.0 (TID 241) (172.31.9.98, executor 1, partition 0, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:38 INFO TaskSetManager: Starting task 3.0 in stage 20.0 (TID 242) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:38 INFO TaskSetManager: Starting task 2.0 in stage 20.0 (TID 243) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:38 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on 172.31.15.133:35213 (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:38 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on 172.31.9.98:33869 (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:38 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.31.15.133:46032
+24/11/08 07:55:38 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 172.31.9.98:36700
+24/11/08 07:55:40 INFO TaskSetManager: Starting task 4.0 in stage 20.0 (TID 244) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:40 INFO TaskSetManager: Finished task 2.0 in stage 20.0 (TID 243) in 1803 ms on 172.31.9.98 (executor 1) (1/22)
+24/11/08 07:55:40 INFO TaskSetManager: Starting task 6.0 in stage 20.0 (TID 245) (172.31.9.98, executor 1, partition 6, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:40 INFO TaskSetManager: Finished task 0.0 in stage 20.0 (TID 241) in 1888 ms on 172.31.9.98 (executor 1) (2/22)
+24/11/08 07:55:40 INFO TaskSetManager: Starting task 5.0 in stage 20.0 (TID 246) (172.31.15.133, executor 0, partition 5, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:40 INFO TaskSetManager: Finished task 3.0 in stage 20.0 (TID 242) in 2180 ms on 172.31.15.133 (executor 0) (3/22)
+24/11/08 07:55:40 INFO TaskSetManager: Starting task 7.0 in stage 20.0 (TID 247) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:40 INFO TaskSetManager: Finished task 1.0 in stage 20.0 (TID 240) in 2211 ms on 172.31.15.133 (executor 0) (4/22)
+24/11/08 07:55:41 INFO TaskSetManager: Starting task 8.0 in stage 20.0 (TID 248) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:41 INFO TaskSetManager: Finished task 4.0 in stage 20.0 (TID 244) in 1657 ms on 172.31.9.98 (executor 1) (5/22)
+24/11/08 07:55:41 INFO TaskSetManager: Starting task 10.0 in stage 20.0 (TID 249) (172.31.9.98, executor 1, partition 10, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:41 INFO TaskSetManager: Finished task 6.0 in stage 20.0 (TID 245) in 1650 ms on 172.31.9.98 (executor 1) (6/22)
+24/11/08 07:55:42 INFO TaskSetManager: Starting task 9.0 in stage 20.0 (TID 250) (172.31.15.133, executor 0, partition 9, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:42 INFO TaskSetManager: Finished task 5.0 in stage 20.0 (TID 246) in 1800 ms on 172.31.15.133 (executor 0) (7/22)
+24/11/08 07:55:42 INFO TaskSetManager: Starting task 11.0 in stage 20.0 (TID 251) (172.31.15.133, executor 0, partition 11, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:42 INFO TaskSetManager: Finished task 7.0 in stage 20.0 (TID 247) in 1809 ms on 172.31.15.133 (executor 0) (8/22)
+24/11/08 07:55:43 INFO TaskSetManager: Starting task 12.0 in stage 20.0 (TID 252) (172.31.9.98, executor 1, partition 12, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:43 INFO TaskSetManager: Finished task 8.0 in stage 20.0 (TID 248) in 1610 ms on 172.31.9.98 (executor 1) (9/22)
+24/11/08 07:55:43 INFO TaskSetManager: Starting task 14.0 in stage 20.0 (TID 253) (172.31.9.98, executor 1, partition 14, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:43 INFO TaskSetManager: Finished task 10.0 in stage 20.0 (TID 249) in 1708 ms on 172.31.9.98 (executor 1) (10/22)
+24/11/08 07:55:44 INFO TaskSetManager: Starting task 13.0 in stage 20.0 (TID 254) (172.31.15.133, executor 0, partition 13, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:44 INFO TaskSetManager: Finished task 9.0 in stage 20.0 (TID 250) in 1827 ms on 172.31.15.133 (executor 0) (11/22)
+24/11/08 07:55:44 INFO TaskSetManager: Starting task 15.0 in stage 20.0 (TID 255) (172.31.15.133, executor 0, partition 15, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:44 INFO TaskSetManager: Finished task 11.0 in stage 20.0 (TID 251) in 1860 ms on 172.31.15.133 (executor 0) (12/22)
+24/11/08 07:55:45 INFO TaskSetManager: Starting task 16.0 in stage 20.0 (TID 256) (172.31.9.98, executor 1, partition 16, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:45 INFO TaskSetManager: Finished task 12.0 in stage 20.0 (TID 252) in 1651 ms on 172.31.9.98 (executor 1) (13/22)
+24/11/08 07:55:45 INFO TaskSetManager: Starting task 18.0 in stage 20.0 (TID 257) (172.31.9.98, executor 1, partition 18, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:45 INFO TaskSetManager: Finished task 14.0 in stage 20.0 (TID 253) in 1609 ms on 172.31.9.98 (executor 1) (14/22)
+24/11/08 07:55:45 INFO TaskSetManager: Starting task 17.0 in stage 20.0 (TID 258) (172.31.15.133, executor 0, partition 17, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:45 INFO TaskSetManager: Finished task 15.0 in stage 20.0 (TID 255) in 1700 ms on 172.31.15.133 (executor 0) (15/22)
+24/11/08 07:55:45 INFO TaskSetManager: Starting task 19.0 in stage 20.0 (TID 259) (172.31.15.133, executor 0, partition 19, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:45 INFO TaskSetManager: Finished task 13.0 in stage 20.0 (TID 254) in 1813 ms on 172.31.15.133 (executor 0) (16/22)
+24/11/08 07:55:46 INFO TaskSetManager: Starting task 20.0 in stage 20.0 (TID 260) (172.31.9.98, executor 1, partition 20, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:46 INFO TaskSetManager: Finished task 16.0 in stage 20.0 (TID 256) in 1636 ms on 172.31.9.98 (executor 1) (17/22)
+24/11/08 07:55:46 INFO TaskSetManager: Finished task 18.0 in stage 20.0 (TID 257) in 1624 ms on 172.31.9.98 (executor 1) (18/22)
+24/11/08 07:55:47 INFO TaskSetManager: Starting task 21.0 in stage 20.0 (TID 261) (172.31.15.133, executor 0, partition 21, NODE_LOCAL, 4264 bytes) taskResourceAssignments Map()
+24/11/08 07:55:47 INFO TaskSetManager: Finished task 17.0 in stage 20.0 (TID 258) in 1655 ms on 172.31.15.133 (executor 0) (19/22)
+24/11/08 07:55:47 INFO TaskSetManager: Finished task 19.0 in stage 20.0 (TID 259) in 1695 ms on 172.31.15.133 (executor 0) (20/22)
+24/11/08 07:55:47 INFO TaskSetManager: Finished task 20.0 in stage 20.0 (TID 260) in 1054 ms on 172.31.9.98 (executor 1) (21/22)
+24/11/08 07:55:48 INFO TaskSetManager: Finished task 21.0 in stage 20.0 (TID 261) in 1111 ms on 172.31.15.133 (executor 0) (22/22)
+24/11/08 07:55:48 INFO TaskSchedulerImpl: Removed TaskSet 20.0, whose tasks have all completed, from pool 
+24/11/08 07:55:48 INFO DAGScheduler: ShuffleMapStage 20 (reduceByKey at /home/ubuntu/page_rank_rdd_v2.py:28) finished in 10.347 s
+24/11/08 07:55:48 INFO DAGScheduler: looking for newly runnable stages
+24/11/08 07:55:48 INFO DAGScheduler: running: Set()
+24/11/08 07:55:48 INFO DAGScheduler: waiting: Set(ResultStage 21)
+24/11/08 07:55:48 INFO DAGScheduler: failed: Set()
+24/11/08 07:55:48 INFO DAGScheduler: Submitting ResultStage 21 (MapPartitionsRDD[119] at saveAsTextFile at NativeMethodAccessorImpl.java:0), which has no missing parents
+24/11/08 07:55:48 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 108.8 KiB, free 2003.8 MiB)
+24/11/08 07:55:48 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 41.3 KiB, free 2003.7 MiB)
+24/11/08 07:55:48 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on ip-172-31-15-133.ec2.internal:33617 (size: 41.3 KiB, free: 2004.4 MiB)
+24/11/08 07:55:48 INFO SparkContext: Created broadcast 22 from broadcast at DAGScheduler.scala:1513
+24/11/08 07:55:48 INFO DAGScheduler: Submitting 22 missing tasks from ResultStage 21 (MapPartitionsRDD[119] at saveAsTextFile at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+24/11/08 07:55:48 INFO TaskSchedulerImpl: Adding task set 21.0 with 22 tasks resource profile 0
+24/11/08 07:55:48 INFO TaskSetManager: Starting task 0.0 in stage 21.0 (TID 262) (172.31.9.98, executor 1, partition 0, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:48 INFO TaskSetManager: Starting task 1.0 in stage 21.0 (TID 263) (172.31.15.133, executor 0, partition 1, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:48 INFO TaskSetManager: Starting task 2.0 in stage 21.0 (TID 264) (172.31.9.98, executor 1, partition 2, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:48 INFO TaskSetManager: Starting task 3.0 in stage 21.0 (TID 265) (172.31.15.133, executor 0, partition 3, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:48 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on 172.31.15.133:35213 (size: 41.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:48 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on 172.31.9.98:33869 (size: 41.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:48 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 172.31.9.98:36700
+24/11/08 07:55:48 INFO BlockManagerInfo: Removed broadcast_20_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.4 MiB)
+24/11/08 07:55:48 INFO BlockManagerInfo: Removed broadcast_20_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:48 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 172.31.15.133:46032
+24/11/08 07:55:48 INFO BlockManagerInfo: Removed broadcast_20_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:48 INFO BlockManagerInfo: Removed broadcast_14_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.4 MiB)
+24/11/08 07:55:48 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:48 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_17_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.4 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_17_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_17_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_9_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_9_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_9_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_10_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_10_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_10_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_16_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_16_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_16_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_15_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_15_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_15_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_12_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_12_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_12_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_19_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_19_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_19_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.8 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_18_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.9 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_18_piece0 on 172.31.9.98:33869 in memory (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_18_piece0 on 172.31.15.133:35213 in memory (size: 8.9 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_13_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_13_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_13_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_11_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_11_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_11_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_21_piece0 on ip-172-31-15-133.ec2.internal:33617 in memory (size: 8.3 KiB, free: 2004.5 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_21_piece0 on 172.31.9.98:33869 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:49 INFO BlockManagerInfo: Removed broadcast_21_piece0 on 172.31.15.133:35213 in memory (size: 8.3 KiB, free: 1988.9 MiB)
+24/11/08 07:55:50 INFO TaskSetManager: Starting task 4.0 in stage 21.0 (TID 266) (172.31.9.98, executor 1, partition 4, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:50 INFO TaskSetManager: Starting task 5.0 in stage 21.0 (TID 267) (172.31.9.98, executor 1, partition 5, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:50 INFO TaskSetManager: Finished task 2.0 in stage 21.0 (TID 264) in 1722 ms on 172.31.9.98 (executor 1) (1/22)
+24/11/08 07:55:50 INFO TaskSetManager: Finished task 0.0 in stage 21.0 (TID 262) in 1728 ms on 172.31.9.98 (executor 1) (2/22)
+24/11/08 07:55:51 INFO TaskSetManager: Starting task 6.0 in stage 21.0 (TID 268) (172.31.15.133, executor 0, partition 6, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:51 INFO TaskSetManager: Starting task 7.0 in stage 21.0 (TID 269) (172.31.15.133, executor 0, partition 7, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:51 INFO TaskSetManager: Finished task 3.0 in stage 21.0 (TID 265) in 2380 ms on 172.31.15.133 (executor 0) (3/22)
+24/11/08 07:55:51 INFO TaskSetManager: Finished task 1.0 in stage 21.0 (TID 263) in 2386 ms on 172.31.15.133 (executor 0) (4/22)
+24/11/08 07:55:51 INFO TaskSetManager: Starting task 8.0 in stage 21.0 (TID 270) (172.31.9.98, executor 1, partition 8, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:51 INFO TaskSetManager: Finished task 4.0 in stage 21.0 (TID 266) in 720 ms on 172.31.9.98 (executor 1) (5/22)
+24/11/08 07:55:51 INFO TaskSetManager: Finished task 5.0 in stage 21.0 (TID 267) in 887 ms on 172.31.9.98 (executor 1) (6/22)
+24/11/08 07:55:51 INFO TaskSetManager: Starting task 9.0 in stage 21.0 (TID 271) (172.31.9.98, executor 1, partition 9, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:51 INFO TaskSetManager: Starting task 10.0 in stage 21.0 (TID 272) (172.31.15.133, executor 0, partition 10, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:51 INFO TaskSetManager: Finished task 6.0 in stage 21.0 (TID 268) in 689 ms on 172.31.15.133 (executor 0) (7/22)
+24/11/08 07:55:51 INFO TaskSetManager: Starting task 11.0 in stage 21.0 (TID 273) (172.31.9.98, executor 1, partition 11, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:51 INFO TaskSetManager: Finished task 9.0 in stage 21.0 (TID 271) in 594 ms on 172.31.9.98 (executor 1) (8/22)
+24/11/08 07:55:51 INFO TaskSetManager: Starting task 12.0 in stage 21.0 (TID 274) (172.31.15.133, executor 0, partition 12, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:51 INFO TaskSetManager: Finished task 7.0 in stage 21.0 (TID 269) in 933 ms on 172.31.15.133 (executor 0) (9/22)
+24/11/08 07:55:52 INFO TaskSetManager: Starting task 13.0 in stage 21.0 (TID 275) (172.31.9.98, executor 1, partition 13, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:52 INFO TaskSetManager: Finished task 8.0 in stage 21.0 (TID 270) in 1085 ms on 172.31.9.98 (executor 1) (10/22)
+24/11/08 07:55:52 INFO TaskSetManager: Starting task 14.0 in stage 21.0 (TID 276) (172.31.9.98, executor 1, partition 14, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:52 INFO TaskSetManager: Finished task 11.0 in stage 21.0 (TID 273) in 365 ms on 172.31.9.98 (executor 1) (11/22)
+24/11/08 07:55:52 INFO TaskSetManager: Starting task 15.0 in stage 21.0 (TID 277) (172.31.15.133, executor 0, partition 15, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:52 INFO TaskSetManager: Finished task 10.0 in stage 21.0 (TID 272) in 780 ms on 172.31.15.133 (executor 0) (12/22)
+24/11/08 07:55:52 INFO TaskSetManager: Starting task 16.0 in stage 21.0 (TID 278) (172.31.15.133, executor 0, partition 16, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:52 INFO TaskSetManager: Finished task 12.0 in stage 21.0 (TID 274) in 706 ms on 172.31.15.133 (executor 0) (13/22)
+24/11/08 07:55:52 INFO TaskSetManager: Starting task 17.0 in stage 21.0 (TID 279) (172.31.9.98, executor 1, partition 17, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:52 INFO TaskSetManager: Finished task 14.0 in stage 21.0 (TID 276) in 660 ms on 172.31.9.98 (executor 1) (14/22)
+24/11/08 07:55:53 INFO TaskSetManager: Starting task 18.0 in stage 21.0 (TID 280) (172.31.9.98, executor 1, partition 18, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:53 INFO TaskSetManager: Finished task 13.0 in stage 21.0 (TID 275) in 1036 ms on 172.31.9.98 (executor 1) (15/22)
+24/11/08 07:55:53 INFO TaskSetManager: Starting task 19.0 in stage 21.0 (TID 281) (172.31.15.133, executor 0, partition 19, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:53 INFO TaskSetManager: Finished task 15.0 in stage 21.0 (TID 277) in 716 ms on 172.31.15.133 (executor 0) (16/22)
+24/11/08 07:55:53 INFO TaskSetManager: Starting task 20.0 in stage 21.0 (TID 282) (172.31.9.98, executor 1, partition 20, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:53 INFO TaskSetManager: Finished task 17.0 in stage 21.0 (TID 279) in 513 ms on 172.31.9.98 (executor 1) (17/22)
+24/11/08 07:55:53 INFO TaskSetManager: Starting task 21.0 in stage 21.0 (TID 283) (172.31.15.133, executor 0, partition 21, NODE_LOCAL, 4275 bytes) taskResourceAssignments Map()
+24/11/08 07:55:53 INFO TaskSetManager: Finished task 16.0 in stage 21.0 (TID 278) in 936 ms on 172.31.15.133 (executor 0) (18/22)
+24/11/08 07:55:53 INFO TaskSetManager: Finished task 18.0 in stage 21.0 (TID 280) in 636 ms on 172.31.9.98 (executor 1) (19/22)
+24/11/08 07:55:53 INFO TaskSetManager: Finished task 20.0 in stage 21.0 (TID 282) in 549 ms on 172.31.9.98 (executor 1) (20/22)
+24/11/08 07:55:54 INFO TaskSetManager: Finished task 19.0 in stage 21.0 (TID 281) in 799 ms on 172.31.15.133 (executor 0) (21/22)
+24/11/08 07:55:54 INFO TaskSetManager: Finished task 21.0 in stage 21.0 (TID 283) in 529 ms on 172.31.15.133 (executor 0) (22/22)
+24/11/08 07:55:54 INFO TaskSchedulerImpl: Removed TaskSet 21.0, whose tasks have all completed, from pool 
+24/11/08 07:55:54 INFO DAGScheduler: ResultStage 21 (runJob at SparkHadoopWriter.scala:83) finished in 5.518 s
+24/11/08 07:55:54 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+24/11/08 07:55:54 INFO TaskSchedulerImpl: Killing all running tasks in stage 21: Stage finished
+24/11/08 07:55:54 INFO DAGScheduler: Job 0 finished: runJob at SparkHadoopWriter.scala:83, took 283.537775 s
+24/11/08 07:55:54 INFO SparkHadoopWriter: Start to commit write Job job_202411080751102692680840420828147_0119.
+24/11/08 07:55:54 INFO SparkHadoopWriter: Write Job job_202411080751102692680840420828147_0119 committed. Elapsed time: 245 ms.
+24/11/08 07:55:54 INFO SparkContext: Invoking stop() from shutdown hook
+24/11/08 07:55:54 INFO SparkUI: Stopped Spark web UI at http://ip-172-31-15-133.ec2.internal:4040
+24/11/08 07:55:54 INFO StandaloneSchedulerBackend: Shutting down all executors
+24/11/08 07:55:54 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asking each executor to shut down
+24/11/08 07:55:54 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+24/11/08 07:55:54 INFO MemoryStore: MemoryStore cleared
+24/11/08 07:55:54 INFO BlockManager: BlockManager stopped
+24/11/08 07:55:54 INFO BlockManagerMaster: BlockManagerMaster stopped
+24/11/08 07:55:54 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+24/11/08 07:55:54 INFO SparkContext: Successfully stopped SparkContext
+24/11/08 07:55:54 INFO ShutdownHookManager: Shutdown hook called
+24/11/08 07:55:54 INFO ShutdownHookManager: Deleting directory /tmp/spark-58d579aa-6b06-4b41-8c3d-db2ad25361a9
+24/11/08 07:55:54 INFO ShutdownHookManager: Deleting directory /tmp/spark-58d579aa-6b06-4b41-8c3d-db2ad25361a9/pyspark-5babd6d4-36bd-4bdf-86be-930f98eadc7f
+24/11/08 07:55:54 INFO ShutdownHookManager: Deleting directory /tmp/spark-45ddc89f-232f-4db3-847e-3fadd5c9d4c1

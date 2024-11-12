@@ -250,7 +250,8 @@ You will receive 1 point for including the required figures in your `.ipynb`: a 
 
    What is the role of a Lambda function in serverless deployment? How does the `lambda_handler` function work to process requests?
 
-   **Answer**: This function is the main function that is called to makes predictions based on input data. It extracts the values from the input `event`, which is the feature values of a iris data item, then calls the `predict` function to predict the iris type, and returns the prediction result in a structured format.
+   **Answer**: The function is act as a entrypoint for our own code running in serverless way. By implementing this function, the serverless system can call our code via this function, and automatically manage other resources. The Lambda function is triggered by the API Gateway, which received the HTTP request from user and forwards to AWS Lambda, which will create the running environment for the function and call the `lambda_handler` function with the input data. After the function is executed, the response is returned to the API Gateway, which will format the response and send it back to the client. 
+   This function is the main function that is called to makes predictions based on input data. It extracts the values from the input `event`, which is the feature values of a iris data item, then calls the `predict` function to predict the iris type, and returns the prediction result in a structured format. 
 
 2. **API Gateway and Lambda Integration** (0.5 point):
 
@@ -303,6 +304,11 @@ Please submit your assignment via BlackBoard in one `.zip` file, including the f
   - Figure of the line graph, cold start histogram, and warm request histogram. (0.5 point)
 - `test_locust_logs.txt` (Locust load test logs) (0.5 point)
   - Located at `locust_logs/test_locust_logs.txt`
+
+## Score
+
+- Score: 5.6/6
+- Remarks: -0.4 for Q1 (lambda function)
 
 ## Author
 
