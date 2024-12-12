@@ -1,4 +1,4 @@
-# CSC4160 Assignment 4: 
+# CSC4160 Assignment 4: Hadoop and Spark
 
 Deadline: 2024.11.10 23:59
 
