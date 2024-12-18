@@ -14,7 +14,7 @@ Learning resources about CSC4160: Cloud Computing, 2024 Fall @ CUHK-Shenzhen.
 - [8/8] [HW4](./HW4/README.md): Hadoop and Spark
 - [2/2] Final Project Proposal (Team work): TBD
 - [6/6] Midterm Report (Team work): TBD
-- [?/100] [Final](./Final/): Final exam.
+- [73/100] [Final](./Final/): Final exam. Avg: 43.8.
 
 
 # Course Information
